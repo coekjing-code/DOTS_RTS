@@ -60,11 +60,27 @@
         "*.asset": "yaml",
         "*.meta": "yaml",
         "*.prefab": "yaml",
-        "*.unity": "yaml",
+        "*.unity": "yaml"
     },
     "explorer.fileNesting.enabled": true,
     "explorer.fileNesting.patterns": {
-        "*.sln": "*.csproj",
+        "*.sln": "*.csproj"
     },
-    "dotnet.defaultSolution": "Dots_RTS.sln"
+    "dotnet.defaultSolution": "dots_-rts.sln",
+
+    // 开启输入自动弹出代码提示弹窗
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": false
+    },
+    "editor.suggestOnTriggerCharacters": true,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.suggest.enabled": true,
+    "editor.wordBasedSuggestions": false,
+    "editor.inlineSuggest.enabled": false,
+
+    // 核心：关闭灰色幽灵预填 + Tab自动补全
+    "editor.tabCompletion": "off"
 }

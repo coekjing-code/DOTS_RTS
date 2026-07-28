@@ -1,6 +1,7 @@
 using System;
 using Unity.Collections;
 using Unity.Entities;
+using Unity.Mathematics;
 using Unity.Physics;
 using Unity.Transforms;
 using UnityEngine;
@@ -31,29 +32,25 @@ public class UnitSelectionManager : MonoBehaviour
             EntityManager entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
             
             // 先清除原先选中
-            EntityQuery entityQuery = new EntityQueryBuilder(Allocator.Temp).WithAll<Unit>().Build(entityManager);
+            EntityQuery entityQuery = new EntityQueryBuilder(Allocator.Temp).WithAll<Selected>().Build(entityManager);
             NativeArray<Entity> entityArray = entityQuery.ToEntityArray(Allocator.Temp);
+            NativeArray<Selected> selectedArray = entityQuery.ToComponentDataArray<Selected>(Allocator.Temp);
             for (int i = 0; i < entityArray.Length; i++)
             {
                 entityManager.SetComponentEnabled<Selected>(entityArray[i], false);
+                Selected selected = selectedArray[i];
+                selected.onDeselected = true;
+                selectedArray[i] = selected;
+
+                entityManager.SetComponentData(entityArray[i], selected);
             }
 
             Rect selectionAreaRect = GetSelectionAreaRect();
             float currentSelectionAreaSize = selectionAreaRect.width + selectionAreaRect.height;
-            float minimumMultipleSelectionAreaSize = 50f;
-            bool isMultipleSelect;
+            float minimumMultipleSelectionAreaSize = 40f;
             // 多选判定
-            if (currentSelectionAreaSize > minimumMultipleSelectionAreaSize)
-            {
-                isMultipleSelect = true;
-            }
-            else
-            {
-                isMultipleSelect = false;
-                Debug.Log("MultipleSelect : " + isMultipleSelect);
-            }
-            
-            
+            bool isMultipleSelect = currentSelectionAreaSize > minimumMultipleSelectionAreaSize;
+
             // 再重新选中
             if (isMultipleSelect)
             {
@@ -67,6 +64,9 @@ public class UnitSelectionManager : MonoBehaviour
                     if (selectionAreaRect.Contains(unitScreenPosition))
                     {
                         entityManager.SetComponentEnabled<Selected>(entities[i], true);
+                        Selected selected = entityManager.GetComponentData<Selected>(entities[i]);
+                        selected.onSelected = true;
+                        entityManager.SetComponentData(entities[i], selected);
                     }
                 }
             }
@@ -76,8 +76,6 @@ public class UnitSelectionManager : MonoBehaviour
                 PhysicsWorldSingleton physicsWorldSingleton = entityQuery.GetSingleton<PhysicsWorldSingleton>();
                 CollisionWorld collisionWorld = physicsWorldSingleton.CollisionWorld;
                 
-                // units所属层级
-                int unitsLayer = 6;
 
                 UnityEngine.Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastInput raycastInput = new RaycastInput()
@@ -87,16 +85,20 @@ public class UnitSelectionManager : MonoBehaviour
                     Filter = new CollisionFilter
                     {
                         BelongsTo = ~0u,
-                        CollidesWith = 1u << unitsLayer,
+                        CollidesWith = 1u << GameAssets.UNIT_LAYER,
                         GroupIndex = 0,
                     }    
                 };
 
                 if (collisionWorld.CastRay(raycastInput, out Unity.Physics.RaycastHit raycastHit))
                 {
-                    if (entityManager.HasComponent<Unit>(raycastHit.Entity))
+                    if (entityManager.HasComponent<Unit>(raycastHit.Entity) && entityManager.HasComponent<Selected>(raycastHit.Entity))
                     {
+                        // 击中单位
                         entityManager.SetComponentEnabled<Selected>(raycastHit.Entity, true);
+                        Selected selected = entityManager.GetComponentData<Selected>(raycastHit.Entity);
+                        selected.onSelected = true;
+                        entityManager.SetComponentData(raycastHit.Entity, selected);
                     }
                 }
             }
@@ -114,10 +116,11 @@ public class UnitSelectionManager : MonoBehaviour
 
             NativeArray<Entity> entityArray = entityQuery.ToEntityArray(Allocator.Temp);
             NativeArray<UnitMover> unitMoverArray = entityQuery.ToComponentDataArray<UnitMover>(Allocator.Temp);
+            NativeArray<float3> unitPositionArrray = GenerateMovePositionArray(mousePosition, entityArray.Length);
             for (int i = 0; i < unitMoverArray.Length; i++)
             {
                 UnitMover unitMover = unitMoverArray[i];
-                unitMover.targetPosition = mousePosition;
+                unitMover.targetPosition = unitPositionArrray[i];
                 entityManager.SetComponentData(entityArray[i], unitMover);
                 unitMoverArray[i] = unitMover;
             }
@@ -133,5 +136,42 @@ public class UnitSelectionManager : MonoBehaviour
         Vector2 rightUpper = new (Mathf.Max(selectionStartMousePosition.x, selectionEndMousePosition.x), Mathf.Max(selectionStartMousePosition.y, selectionEndMousePosition.y)); 
 
         return new Rect(leftLower.x, leftLower.y, rightUpper.x - leftLower.x, rightUpper.y - leftLower.y);
+    }
+
+    private NativeArray<float3> GenerateMovePositionArray(float3 targetPosition, int positionCount)
+    {
+        NativeArray<float3> positionArray = new NativeArray<float3>(positionCount, Allocator.Temp);
+
+        if (positionCount == 0) return positionArray;
+
+        positionArray[0] = targetPosition;
+
+        if (positionCount == 1) return positionArray;
+
+        float ringRadius = 1.5f;
+        int positionIndex = 1;
+        int ringCount = 0;
+
+        while (positionIndex < positionCount)
+        {
+            int ringPositionCount = 3 + ringCount * 2;
+
+            for (int i = 0; i < ringPositionCount; i++)
+            {
+                float angle = i * math.PI2 / ringPositionCount;
+                float3 ringVector3 = math.rotate(quaternion.RotateY(angle), new float3(ringRadius * (ringCount + 1), 0f, 0f));
+                float3 ringPosition = targetPosition + ringVector3;
+
+                positionArray[positionIndex] = ringPosition;
+                positionIndex++;
+
+                if (positionIndex >= positionCount)
+                {
+                    break;
+                }
+            }
+            ringCount++;
+        }
+        return positionArray;
     }
 }
