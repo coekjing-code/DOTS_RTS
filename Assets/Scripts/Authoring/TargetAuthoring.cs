@@ -3,7 +3,7 @@ using UnityEngine;
 
 class TargetAuthoring : MonoBehaviour
 {
-    public Entity targetEntity;
+    public GameObject targetGameObject;
     class TargetAuthoringBaker : Baker<TargetAuthoring>
     {
         public override void Bake(TargetAuthoring authoring)
@@ -11,7 +11,7 @@ class TargetAuthoring : MonoBehaviour
             Entity entity = GetEntity(TransformUsageFlags.Dynamic);
             AddComponent(entity, new Target()
             {
-                targetEntity = authoring.targetEntity,
+                targetEntity = GetEntity(authoring.targetGameObject, TransformUsageFlags.Dynamic)
             });
         }
     }

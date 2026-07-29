@@ -4,9 +4,9 @@ using Unity.Mathematics;
 using Unity.Physics;
 using Unity.Transforms;
 
-partial struct UnitMoveSystem : ISystem
+partial struct UnitMoverSystem : ISystem
 {
-
+    public const float REACH_TARGET_POSITION_SQ = 0.5f;
     [BurstCompile]
     public void OnUpdate(ref SystemState state)
     {
@@ -40,8 +40,8 @@ public partial struct UnitMoverJob : IJobEntity
     {
             float3 moveDirection = unitMover.targetPosition - localTransform.Position;
 
-            float reachTargetDistanceSq = .5f;
-            if (math.lengthsq(moveDirection) < reachTargetDistanceSq)
+            float reachTargetDistanceSq = UnitMoverSystem.REACH_TARGET_POSITION_SQ;
+            if (math.lengthsq(moveDirection) <= reachTargetDistanceSq)
             {
                 physicsVelocity.Angular = float3.zero;
                 physicsVelocity.Linear = float3.zero;

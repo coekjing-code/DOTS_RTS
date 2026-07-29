@@ -60,14 +60,20 @@
     <Analyzer Include="E:\UnityProject\Unity_Project\dots_-rts\Library\PackageCache\com.unity.entities@3142232a0e7c\Unity.Entities\SourceGenerators\Unity.Entities.Analyzer.CodeFixes.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\System\MoveUnitSystem.cs" />
     <Compile Include="Assets\Scripts\Authoring\FindTargetAuthoring.cs" />
+    <Compile Include="Assets\Scripts\Authoring\HealthBarAuthoring.cs" />
+    <Compile Include="Assets\Scripts\Authoring\MeleeAttackAuthoring.cs" />
     <Compile Include="Assets\Scripts\Authoring\ShootAttackAuthoring.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\MouseWorldPosition.cs" />
     <Compile Include="Assets\Scripts\System\ShootAttackSystem.cs" />
+    <Compile Include="Assets\Scripts\System\ShootLightSpawnerSystem.cs" />
     <Compile Include="Assets\Scripts\Authoring\HealthAuthoring.cs" />
+    <Compile Include="Assets\Scripts\System\ZombieSpawnerSystem.cs" />
     <Compile Include="Assets\Scripts\UI\UnitSelectionManagerUI.cs" />
+    <Compile Include="Assets\Scripts\Authoring\ShootVictimAuthoring.cs" />
     <Compile Include="Assets\Scripts\Authoring\UnitMoverAuthoring.cs" />
+    <Compile Include="Assets\Scripts\System\UnitMoverSystem.cs" />
+    <Compile Include="Assets\Scripts\Authoring\RandomWalkingAuthoring.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\GameAssets.cs" />
     <Compile Include="Assets\Scripts\System\ResetTargetSystem.cs" />
     <Compile Include="Assets\Scripts\Authoring\EnemyAuthoring.cs" />
@@ -75,13 +81,21 @@
     <Compile Include="Assets\Scripts\Authoring\FriendlyAuthoring.cs" />
     <Compile Include="Assets\Scripts\Faction.cs" />
     <Compile Include="Assets\Scripts\Authoring\BulletAuthoring.cs" />
+    <Compile Include="Assets\Scripts\System\RandomWalkingSystem.cs" />
     <Compile Include="Assets\Scripts\System\SelectedVisualSystem.cs" />
     <Compile Include="Assets\Scripts\Authoring\TargetAuthoring.cs" />
+    <Compile Include="Assets\Scripts\System\MeleeAttackSystem.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\System\FindTargetSystem.cs" />
+    <Compile Include="Assets\Scripts\System\BulletMoverSystem.cs" />
     <Compile Include="Assets\Scripts\System\HealthDeadTestSystem.cs" />
+    <Compile Include="Assets\Scripts\System\ShootLightDestroySystem.cs" />
+    <Compile Include="Assets\Scripts\Authoring\ShootLightAuthoring.cs" />
     <Compile Include="Assets\Scripts\Authoring\SelectedAuthoring.cs" />
+    <Compile Include="Assets\Scripts\Authoring\EntitiesReferenceAuthoring.cs" />
+    <Compile Include="Assets\Scripts\Authoring\ZombieSpawnerAuthoring.cs" />
     <Compile Include="Assets\Scripts\Authoring\UnitAuthoring.cs" />
+    <Compile Include="Assets\Scripts\System\HealthBarSystem.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UnitSelectionManager.cs" />
     <Compile Include="Assets\Scripts\System\TestSystem.cs" />
   </ItemGroup>

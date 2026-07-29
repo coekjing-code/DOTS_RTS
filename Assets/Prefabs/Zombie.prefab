@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7741497587198541567
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4506409758930958121}
+  m_Layer: 6
+  m_Name: Hit Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4506409758930958121
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7741497587198541567}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.479, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 590953228321248381}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5625089392162016945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14,7 +45,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5053927373286136524, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -5.64
       objectReference: {fileID: 0}
     - target: {fileID: 5053927373286136524, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -66,12 +97,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5053927373286136524, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4506409758930958121}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7073436717731348781, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1375627530291006881}
+    - targetCorrespondingSourceObject: {fileID: 7073436717731348781, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8712926247136930616}
+    - targetCorrespondingSourceObject: {fileID: 7073436717731348781, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8787002186599613174}
+    - targetCorrespondingSourceObject: {fileID: 7073436717731348781, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1561279856104327240}
   m_SourcePrefab: {fileID: 100100000, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
+--- !u!4 &590953228321248381 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5053927373286136524, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
+  m_PrefabInstance: {fileID: 5625089392162016945}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3186773684366315420 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7073436717731348781, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
@@ -89,3 +137,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d73e85c477f2352488ae935346b9191b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8712926247136930616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3186773684366315420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a43338ce737b9c34bbae658784562091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HitPositionTransform: {fileID: 4506409758930958121}
+--- !u!114 &-8787002186599613174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3186773684366315420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcaf7c4c751b8a345a592b2c87e11b65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originPosition:
+    x: 5
+    y: 0
+    z: 7
+  targetPosition:
+    x: 10
+    y: 0
+    z: 4
+  distanceMin: 3
+  minDistance: 8
+  randomSeed: 56
+--- !u!114 &1561279856104327240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3186773684366315420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b041cb43a80380488fa57e57d8321e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerMax: 0.2
+  damageAmount: 10
