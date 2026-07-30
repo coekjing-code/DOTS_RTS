@@ -4,23 +4,57 @@ using Unity.Entities;
 [UpdateInGroup(typeof(LateSimulationSystemGroup), OrderLast = true)]
 partial struct ResetEventsSystem : ISystem
 {
+
     [BurstCompile]
     public void OnUpdate(ref SystemState state)
     {
-        foreach (RefRW<Selected> selected in SystemAPI.Query<RefRW<Selected>>().WithPresent<Selected>())
-        {
-            selected.ValueRW.onSelected = false;
-            selected.ValueRW.onDeselected = false;
-        }
+        new ResetSelectedEventsJob().ScheduleParallel();
+        new ResetShootAttackEventsJob().ScheduleParallel();
+        new ResetHealthEventsJob().ScheduleParallel();
 
-        foreach (RefRW<Health> health in SystemAPI.Query<RefRW<Health>>())
-        {
-            health.ValueRW.onHealthChanged = false;
-        }
+        // foreach (RefRW<Selected> selected in SystemAPI.Query<RefRW<Selected>>().WithPresent<Selected>())
+        // {
+        //     selected.ValueRW.onSelected = false;
+        //     selected.ValueRW.onDeselected = false;
+        // }
 
-        foreach (RefRW<ShootAttack> shootAttack in SystemAPI.Query<RefRW<ShootAttack>>())
-        {
-            shootAttack.ValueRW.onShoot.isTriggered = false;
-        }
+        // foreach (RefRW<Health> health in SystemAPI.Query<RefRW<Health>>())
+        // {
+        //     health.ValueRW.onHealthChanged = false;
+        // }
+
+        // foreach (RefRW<ShootAttack> shootAttack in SystemAPI.Query<RefRW<ShootAttack>>())
+        // {
+        //     shootAttack.ValueRW.onShoot.isTriggered = false;
+        // }
+    }
+}
+
+[BurstCompile]
+public partial struct ResetShootAttackEventsJob : IJobEntity
+{
+    public void Execute(ref ShootAttack shootAttack)
+    {
+        shootAttack.onShoot.isTriggered = false;
+    }
+}
+
+[BurstCompile]
+[WithOptions(EntityQueryOptions.IgnoreComponentEnabledState)]
+public partial struct ResetHealthEventsJob : IJobEntity
+{
+    public void Execute(ref Health health)
+    {
+        health.onHealthChanged = false;
+    }
+}
+
+[BurstCompile]
+public partial struct ResetSelectedEventsJob : IJobEntity
+{
+    public void Execute(ref Selected selected)
+    {
+        selected.onDeselected = false;
+        selected.onSelected = false;
     }
 }

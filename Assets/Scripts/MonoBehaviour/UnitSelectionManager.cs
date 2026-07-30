@@ -112,19 +112,83 @@ public class UnitSelectionManager : MonoBehaviour
             Vector3 mousePosition = MouseWorldPosition.Instance.GetPosition();
 
             EntityManager entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
-            EntityQuery entityQuery = new EntityQueryBuilder(Allocator.Temp).WithAll<UnitMover, Selected>().Build(entityManager);
 
-            NativeArray<Entity> entityArray = entityQuery.ToEntityArray(Allocator.Temp);
-            NativeArray<UnitMover> unitMoverArray = entityQuery.ToComponentDataArray<UnitMover>(Allocator.Temp);
-            NativeArray<float3> unitPositionArrray = GenerateMovePositionArray(mousePosition, entityArray.Length);
-            for (int i = 0; i < unitMoverArray.Length; i++)
+            EntityQuery entityQuery = entityManager.CreateEntityQuery(typeof(PhysicsWorldSingleton));
+            PhysicsWorldSingleton physicsWorldSingleton = entityQuery.GetSingleton<PhysicsWorldSingleton>();
+            CollisionWorld collisionWorld = physicsWorldSingleton.CollisionWorld;
+
+            UnityEngine.Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastInput raycastInput = new RaycastInput()
             {
-                UnitMover unitMover = unitMoverArray[i];
-                unitMover.targetPosition = unitPositionArrray[i];
-                entityManager.SetComponentData(entityArray[i], unitMover);
-                unitMoverArray[i] = unitMover;
+                Start = cameraRay.GetPoint(0f),
+                End = cameraRay.GetPoint(9999f),
+                Filter = new CollisionFilter
+                {
+                    BelongsTo = ~0u,
+                    CollidesWith = 1u << GameAssets.UNIT_LAYER,
+                    GroupIndex = 0,
+                }
+            };
+
+            // 区分此次右键是选择敌人还是移动位置
+            bool isAttackingSingleTarget = false;
+            if (collisionWorld.CastRay(raycastInput, out Unity.Physics.RaycastHit raycastHit))
+            {
+                if (entityManager.HasComponent<Unit>(raycastHit.Entity))
+                {
+                    // 右键点中僵尸时，将其设为overrideTarget
+                    Unit unit = entityManager.GetComponentData<Unit>(raycastHit.Entity);
+                    if (unit.faction == Faction.Zombie)
+                    {
+                        isAttackingSingleTarget = true;
+
+                        // 查询所有的被选中的Unit(带有TargetOverride组件)
+                        entityQuery = new EntityQueryBuilder(Allocator.Temp).WithAll<Selected>().WithPresent<TargetOverride>().Build(entityManager);
+
+                        NativeArray<Entity> entityArray = entityQuery.ToEntityArray(Allocator.Temp);
+                        NativeArray<TargetOverride> targetOverrideArray = entityQuery.ToComponentDataArray<TargetOverride>(Allocator.Temp);
+                        // 将这些Unit的TargetOverride设为右键选中的敌人
+                        for (int i = 0; i < targetOverrideArray.Length; i++)
+                        {
+                            TargetOverride targetOverride = targetOverrideArray[i];
+                            targetOverride.targetEntity = raycastHit.Entity;
+                            targetOverrideArray[i] = targetOverride;
+                            // 并禁用MoveOverride组件
+                            entityManager.SetComponentEnabled<MoveOverride>(entityArray[i], false);
+                        }
+                        entityQuery.CopyFromComponentDataArray(targetOverrideArray);
+                    }
+                }
             }
-            entityQuery.CopyFromComponentDataArray(unitMoverArray);
+
+            if (!isAttackingSingleTarget)
+            {
+                // 查询所有带有MoveOverride和TargetOverride组件的Unit
+                entityQuery = new EntityQueryBuilder(Allocator.Temp).
+                WithAll<Selected>().WithPresent<MoveOverride, TargetOverride>().Build(entityManager);
+
+                NativeArray<Entity> entityArray = entityQuery.ToEntityArray(Allocator.Temp);
+                NativeArray<MoveOverride> moverOverrideArray = entityQuery.ToComponentDataArray<MoveOverride>(Allocator.Temp);
+                NativeArray<TargetOverride> targetOverrideArray = entityQuery.ToComponentDataArray<TargetOverride>(Allocator.Temp);
+                NativeArray<float3> movePositionArray = GenerateMovePositionArray(mousePosition, entityArray.Length);
+                // 设置MoveOverride的TargetPosition,启用MoveOverride
+                // 更新查询到的Entity的组件
+                // 将TargetOverride的targetEntity设为Null
+                for (int i = 0; i < moverOverrideArray.Length; i++)
+                {
+                    MoveOverride moveOverride = moverOverrideArray[i];
+                    moveOverride.targetPosition = movePositionArray[i];
+                    entityManager.SetComponentData(entityArray[i], moveOverride);   
+                    moverOverrideArray[i] = moveOverride;
+                    entityManager.SetComponentEnabled<MoveOverride>(entityArray[i], true);
+
+                    TargetOverride targetOverride = targetOverrideArray[i];
+                    targetOverride.targetEntity = Entity.Null;
+                    targetOverrideArray[i] = targetOverride;
+                }
+                entityQuery.CopyFromComponentDataArray(moverOverrideArray);
+                entityQuery.CopyFromComponentDataArray(targetOverrideArray);
+            }
         }
     }
 

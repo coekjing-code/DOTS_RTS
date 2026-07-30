@@ -85,7 +85,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7039319915722205336, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: range
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7039319915722205336, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: faction
@@ -187,3 +187,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerMax: 0.2
   damageAmount: 10
+  collideSize: 0.3

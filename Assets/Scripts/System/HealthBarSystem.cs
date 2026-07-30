@@ -1,4 +1,5 @@
 using Unity.Burst;
+using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
@@ -8,7 +9,20 @@ using UnityEngine;
 [UpdateInGroup(typeof(LateSimulationSystemGroup))]
 partial struct HealthBarSystem : ISystem
 {
-    // [BurstCompile]
+    [ReadOnly] public ComponentLookup<Health> healthComponentLookup;
+    // 第一个特性表示多个Jobs可以同时安全地访问同一原生容器
+    [NativeDisableParallelForRestriction] [ReadOnly] public ComponentLookup<LocalTransform> localTransformComponentLookup;
+    [NativeDisableParallelForRestriction] [ReadOnly] public ComponentLookup<PostTransformMatrix> postTransformMatrixComponentLookup;
+
+    [BurstCompile]
+    public void OnCreate(ref SystemState state)
+    {
+        localTransformComponentLookup = state.GetComponentLookup<LocalTransform>();
+        healthComponentLookup = state.GetComponentLookup<Health>(true);
+        postTransformMatrixComponentLookup = state.GetComponentLookup<PostTransformMatrix>(false);
+    }
+
+    [BurstCompile]
     public void OnUpdate(ref SystemState state)
     {
         // dots系统的执行会早于unity引擎系统，因此此处要做安全检查
@@ -18,42 +32,92 @@ partial struct HealthBarSystem : ISystem
             cameraForward = Camera.main.transform.forward;
         }
 
-        foreach ((RefRW<HealthBar> healthBar, RefRW<LocalTransform> localTransform)
-        in SystemAPI.Query<RefRW<HealthBar>, RefRW<LocalTransform>>())
+        localTransformComponentLookup.Update(ref state);
+        healthComponentLookup.Update(ref state);
+        postTransformMatrixComponentLookup.Update(ref state);
+        HealthBarJob healthBarJob = new HealthBarJob()
         {
-            // 基于父物体做一个面向相机前方的旋转
-            LocalTransform parentLocalTransform = SystemAPI.GetComponent<LocalTransform>(healthBar.ValueRO.healthEntity);
-            if (localTransform.ValueRO.Scale == 1f)
-            {
-                localTransform.ValueRW.Rotation = parentLocalTransform.InverseTransformRotation(quaternion.LookRotation(cameraForward, math.up()));
-            }
+            cameraForward = cameraForward,
+            localTransformComponentLookup = localTransformComponentLookup,
+            healthComponentLookup = healthComponentLookup,
+            postTransformMatrixComponentLookup = postTransformMatrixComponentLookup,
+        };
+        healthBarJob.ScheduleParallel();
+        // foreach ((
+        // RefRW<HealthBar> healthBar,
+        // RefRW<LocalTransform> localTransform)
+        // in SystemAPI.Query<
+        // RefRW<HealthBar>,
+        // RefRW<LocalTransform>>())
+        // {
+        //     // 基于父物体做一个面向相机前方的旋转
+        //     LocalTransform parentLocalTransform = SystemAPI.GetComponent<LocalTransform>(healthBar.ValueRO.healthEntity);
+        //     if (localTransform.ValueRO.Scale == 1f)
+        //     {
+        //         localTransform.ValueRW.Rotation = parentLocalTransform.InverseTransformRotation(quaternion.LookRotation(cameraForward, math.up()));
+        //     }
 
-            Health health = SystemAPI.GetComponent<Health>(healthBar.ValueRO.healthEntity);
+        //     Health health = SystemAPI.GetComponent<Health>(healthBar.ValueRO.healthEntity);
 
-            if (!health.onHealthChanged)
-            {
-                continue;
-            }
+        //     if (!health.onHealthChanged)
+        //     {
+        //         continue;
+        //     }
 
-            float healthNormalized = (float)health.healthAmount / health.healthAmountMax;
+        //     float healthNormalized = (float)health.healthAmount / health.healthAmountMax;
 
-            if (healthNormalized == 1f)
-            {
-                localTransform.ValueRW.Scale = 0f;
-            }
-            else
-            {
-                localTransform.ValueRW.Scale = 1f;
-            }
+        //     if (healthNormalized == 1f)
+        //     {
+        //         localTransform.ValueRW.Scale = 0f;
+        //     }
+        //     else
+        //     {
+        //         localTransform.ValueRW.Scale = 1f;
+        //     }
 
-            // 当Entity的Scale不是(1, 1, 1)时，会自动添加PostTransformMatrix组件
-            // 或者将TransformUsageFlags设为NonUniformScale也会添加
-            RefRW<PostTransformMatrix> barVisualPostTransformMatrix =
-                SystemAPI.GetComponentRW<PostTransformMatrix>(healthBar.ValueRO.barVisualEntity);
-            barVisualPostTransformMatrix.ValueRW.Value = float4x4.Scale(healthNormalized, 1, 1);
+        //     // 当Entity的Scale不是(1, 1, 1)时，会自动添加PostTransformMatrix组件
+        //     // 或者将TransformUsageFlags设为NonUniformScale也会添加
+        //     RefRW<PostTransformMatrix> barVisualPostTransformMatrix =
+        //         SystemAPI.GetComponentRW<PostTransformMatrix>(healthBar.ValueRO.barVisualEntity);
+        //     barVisualPostTransformMatrix.ValueRW.Value = float4x4.Scale(healthNormalized, 1, 1);
+        // }
+    }
+}
 
-            // RefRW<LocalTransform> localTransform = SystemAPI.GetComponentRW<LocalTransform>(healthBar.ValueRO.barVisualEntity);
-            // localTransform.ValueRW.Scale = healthNormalized;
+public partial struct HealthBarJob : IJobEntity
+{
+    [ReadOnly] public ComponentLookup<LocalTransform> localTransformComponentLookup;
+    [ReadOnly] public ComponentLookup<Health> healthComponentLookup;
+    [ReadOnly] public ComponentLookup<PostTransformMatrix> postTransformMatrixComponentLookup;
+    public float3 cameraForward;
+
+    public void Execute(in HealthBar healthBar, Entity entity)
+    {
+        // 基于父物体做一个面向相机前方的旋转
+        RefRW<LocalTransform> localTransform = localTransformComponentLookup.GetRefRW(entity);
+        LocalTransform parentLocalTransform = localTransformComponentLookup[healthBar.healthEntity];
+        if (localTransform.ValueRO.Scale == 1f)
+        {
+            localTransform.ValueRW.Rotation = parentLocalTransform.InverseTransformRotation(quaternion.LookRotation(cameraForward, math.up()));
         }
+        Health health = healthComponentLookup[healthBar.healthEntity];
+        if (!health.onHealthChanged)
+        {
+            return;
+        }
+        float healthNormalized = (float)health.healthAmount / health.healthAmountMax;
+        if (healthNormalized == 1f)
+        {
+            localTransform.ValueRW.Scale = 0f;
+        }
+        else
+        {
+            localTransform.ValueRW.Scale = 1f;
+        }
+        // 当Entity的Scale不是(1, 1, 1)时，会自动添加PostTransformMatrix组件
+        // 或者将TransformUsageFlags设为NonUniformScale也会添加
+        RefRW<PostTransformMatrix> barVisualPostTransformMatrix =
+            postTransformMatrixComponentLookup.GetRefRW(healthBar.barVisualEntity);
+        barVisualPostTransformMatrix.ValueRW.Value = float4x4.Scale(healthNormalized, 1, 1);
     }
 }

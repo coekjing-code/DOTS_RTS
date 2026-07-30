@@ -6,11 +6,28 @@ using Unity.Transforms;
 partial struct ShootAttackSystem : ISystem
 {
     [BurstCompile]
+    public void OnCreate(ref SystemState state)
+    {
+        // 如果EntitesReferences不存在，则不执行OnUpdate方法
+        state.RequireForUpdate<EntitiesReferences>();
+    }
+
+    [BurstCompile]
     public void OnUpdate(ref SystemState state)
     {
         EntitiesReferences entitiesReferences = SystemAPI.GetSingleton<EntitiesReferences>();
-        foreach ((RefRW<LocalTransform> localTransform, RefRW<ShootAttack> shootAttack, RefRO<Target> target, RefRW<UnitMover> unitMover)
-        in SystemAPI.Query<RefRW<LocalTransform>, RefRW<ShootAttack>, RefRO<Target>, RefRW<UnitMover>>())
+        foreach ((
+            RefRW<LocalTransform> localTransform,
+            RefRW<ShootAttack> shootAttack,
+            RefRO<Target> target,
+            RefRW<UnitMover> unitMover,
+            Entity entity)
+            in SystemAPI.Query<
+                RefRW<LocalTransform>,
+                RefRW<ShootAttack>,
+                RefRO<Target>,
+        // 移动等级高于攻击等级
+        RefRW<UnitMover>>().WithDisabled<MoveOverride>().WithEntityAccess())
         {
             if (target.ValueRO.targetEntity == Entity.Null) continue;
 
@@ -41,6 +58,12 @@ partial struct ShootAttackSystem : ISystem
 
             shootAttack.ValueRW.timer = shootAttack.ValueRO.timerMax;
 
+            // Unit射击敌人时，若敌人targetOverride为Null,则将Unit设为其targetOverride
+            RefRW<TargetOverride> enemyTargetOverride = SystemAPI.GetComponentRW<TargetOverride>(target.ValueRO.targetEntity);
+            if (enemyTargetOverride.ValueRO.targetEntity == Entity.Null)
+            {
+                enemyTargetOverride.ValueRW.targetEntity = entity;
+            }
 
             Entity bulletEntity = state.EntityManager.Instantiate(entitiesReferences.bulletPrefabEntity);
             // 将子弹生成位置由局部坐标转为世界坐标
@@ -57,10 +80,6 @@ partial struct ShootAttackSystem : ISystem
 
             shootAttack.ValueRW.onShoot.isTriggered = true;
             shootAttack.ValueRW.onShoot.shootFromPosition = bulletSpawnWorldPosition;
-
-            // 射击时枪口火光
-            // Entity shootLightEntity = state.EntityManager.Instantiate(entitiesReferences.shootLightPrefabEntity);
-            // SystemAPI.SetComponent(shootLightEntity, LocalTransform.FromPosition(bulletSpawnPosition));
         }
     }
 }

@@ -139,7 +139,7 @@ PrefabInstance:
       objectReference: {fileID: 4344891976595876500}
     - target: {fileID: 5053927373286136524, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.28
+      value: 1.4099998
       objectReference: {fileID: 0}
     - target: {fileID: 5053927373286136524, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -147,7 +147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5053927373286136524, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2.47
       objectReference: {fileID: 0}
     - target: {fileID: 5053927373286136524, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -185,9 +185,13 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: f1ffde0cab3b53e4b8db6c78d825b21a, type: 2}
+    - target: {fileID: 6952025157487261511, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
+      propertyPath: moveSpeed
+      value: 4.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7039319915722205336, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: range
-      value: 8
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7039319915722205336, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: faction
@@ -252,6 +256,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7073436717731348781, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       insertIndex: -1
       addedObject: {fileID: -5986463141628230162}
+    - targetCorrespondingSourceObject: {fileID: 7073436717731348781, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 551415473012944971}
   m_SourcePrefab: {fileID: 100100000, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
 --- !u!1 &589636673881142501 stripped
 GameObject:
@@ -298,8 +305,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerMax: 0.2
   damageAmount: 5
-  attackDistance: 7
+  attackDistance: 13
   bulletSpawnPositionTransform: {fileID: 2880607234138915955}
+--- !u!114 &551415473012944971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589636673881142501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198b498fb321a954c92edd5e766fba93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &3180669929069784836 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5053927373286136524, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}

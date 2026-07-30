@@ -62,6 +62,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Authoring\FindTargetAuthoring.cs" />
     <Compile Include="Assets\Scripts\Authoring\HealthBarAuthoring.cs" />
+    <Compile Include="Assets\Scripts\System\LoseTargetSystem.cs" />
+    <Compile Include="Assets\Scripts\Authoring\TargetOverrideAuthoring.cs" />
+    <Compile Include="Assets\Scripts\Authoring\SetupUnitMoverDefaultPositionAuthoring.cs" />
     <Compile Include="Assets\Scripts\Authoring\MeleeAttackAuthoring.cs" />
     <Compile Include="Assets\Scripts\Authoring\ShootAttackAuthoring.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\MouseWorldPosition.cs" />
@@ -78,10 +81,12 @@
     <Compile Include="Assets\Scripts\System\ResetTargetSystem.cs" />
     <Compile Include="Assets\Scripts\Authoring\EnemyAuthoring.cs" />
     <Compile Include="Assets\Scripts\System\ResetEventsSystem.cs" />
+    <Compile Include="Assets\Scripts\Authoring\LoseTargetAuthoring.cs" />
     <Compile Include="Assets\Scripts\Authoring\FriendlyAuthoring.cs" />
     <Compile Include="Assets\Scripts\Faction.cs" />
     <Compile Include="Assets\Scripts\Authoring\BulletAuthoring.cs" />
     <Compile Include="Assets\Scripts\System\RandomWalkingSystem.cs" />
+    <Compile Include="Assets\Scripts\System\SetupUnitMoverDefaultPositionSystem.cs" />
     <Compile Include="Assets\Scripts\System\SelectedVisualSystem.cs" />
     <Compile Include="Assets\Scripts\Authoring\TargetAuthoring.cs" />
     <Compile Include="Assets\Scripts\System\MeleeAttackSystem.cs" />
@@ -93,7 +98,9 @@
     <Compile Include="Assets\Scripts\Authoring\ShootLightAuthoring.cs" />
     <Compile Include="Assets\Scripts\Authoring\SelectedAuthoring.cs" />
     <Compile Include="Assets\Scripts\Authoring\EntitiesReferenceAuthoring.cs" />
+    <Compile Include="Assets\Scripts\System\MoveOverrideSystem.cs" />
     <Compile Include="Assets\Scripts\Authoring\ZombieSpawnerAuthoring.cs" />
+    <Compile Include="Assets\Scripts\Authoring\MoveOverrideAuthoring.cs" />
     <Compile Include="Assets\Scripts\Authoring\UnitAuthoring.cs" />
     <Compile Include="Assets\Scripts\System\HealthBarSystem.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UnitSelectionManager.cs" />
