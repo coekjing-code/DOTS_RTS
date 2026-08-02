@@ -128,7 +128,7 @@ PrefabInstance:
     - target: {fileID: 1164612401590862688, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 4300000, guid: fcb334eb247ae3e488abb081c847cf09, type: 3}
+      objectReference: {fileID: 4300000, guid: f4209d51d1ad0434299f2d498ee076ba, type: 3}
     - target: {fileID: 1228227546833300971, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: faction
       value: 0
@@ -147,7 +147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5053927373286136524, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.47
+      value: -5.6
       objectReference: {fileID: 0}
     - target: {fileID: 5053927373286136524, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -178,13 +178,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5054261994035909450, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5054261994035909450, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 69c0fd068809d2a4cafbb12fd8e38326, type: 2}
+      objectReference: {fileID: 2100000, guid: 1dcd4ea457239f049875b7a7c8f9509e, type: 2}
     - target: {fileID: 5054261994035909450, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: f1ffde0cab3b53e4b8db6c78d825b21a, type: 2}
+    - target: {fileID: 5093832809708636421, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
+      propertyPath: loseTargetDistance
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6952025157487261511, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: moveSpeed
       value: 4.5

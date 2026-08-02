@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89527bf8fdc2a8d4c95fb262b55fc71f, type: 3}
+  m_Name: Shoot
+  m_EditorClassIdentifier: 
+  meshArray:
+  - {fileID: 4300000, guid: 4fb2b190413d84b4387affcb2d6ccffe, type: 2}
+  - {fileID: 4300000, guid: 5df11ef18c524454c8c15395e65f0216, type: 2}
+  - {fileID: 4300000, guid: ef1d9d621354e394fa221374dfab89e8, type: 2}
+  - {fileID: 4300000, guid: 5cc4e82440d291b43a8fa0c85ab4f5cf, type: 2}
+  - {fileID: 4300000, guid: b43aae7a3e563ff4c84658fe9488ee42, type: 2}
+  frameTimerMax: 0.25
