@@ -43,52 +43,15 @@ partial struct HealthBarSystem : ISystem
             postTransformMatrixComponentLookup = postTransformMatrixComponentLookup,
         };
         healthBarJob.ScheduleParallel();
-        // foreach ((
-        // RefRW<HealthBar> healthBar,
-        // RefRW<LocalTransform> localTransform)
-        // in SystemAPI.Query<
-        // RefRW<HealthBar>,
-        // RefRW<LocalTransform>>())
-        // {
-        //     // 基于父物体做一个面向相机前方的旋转
-        //     LocalTransform parentLocalTransform = SystemAPI.GetComponent<LocalTransform>(healthBar.ValueRO.healthEntity);
-        //     if (localTransform.ValueRO.Scale == 1f)
-        //     {
-        //         localTransform.ValueRW.Rotation = parentLocalTransform.InverseTransformRotation(quaternion.LookRotation(cameraForward, math.up()));
-        //     }
-
-        //     Health health = SystemAPI.GetComponent<Health>(healthBar.ValueRO.healthEntity);
-
-        //     if (!health.onHealthChanged)
-        //     {
-        //         continue;
-        //     }
-
-        //     float healthNormalized = (float)health.healthAmount / health.healthAmountMax;
-
-        //     if (healthNormalized == 1f)
-        //     {
-        //         localTransform.ValueRW.Scale = 0f;
-        //     }
-        //     else
-        //     {
-        //         localTransform.ValueRW.Scale = 1f;
-        //     }
-
-        //     // 当Entity的Scale不是(1, 1, 1)时，会自动添加PostTransformMatrix组件
-        //     // 或者将TransformUsageFlags设为NonUniformScale也会添加
-        //     RefRW<PostTransformMatrix> barVisualPostTransformMatrix =
-        //         SystemAPI.GetComponentRW<PostTransformMatrix>(healthBar.ValueRO.barVisualEntity);
-        //     barVisualPostTransformMatrix.ValueRW.Value = float4x4.Scale(healthNormalized, 1, 1);
-        // }
+        // 原代码
     }
 }
 
 public partial struct HealthBarJob : IJobEntity
 {
-    [ReadOnly] public ComponentLookup<LocalTransform> localTransformComponentLookup;
+    [NativeDisableParallelForRestriction] public ComponentLookup<LocalTransform> localTransformComponentLookup;
     [ReadOnly] public ComponentLookup<Health> healthComponentLookup;
-    [ReadOnly] public ComponentLookup<PostTransformMatrix> postTransformMatrixComponentLookup;
+    [NativeDisableParallelForRestriction] public ComponentLookup<PostTransformMatrix> postTransformMatrixComponentLookup;
     public float3 cameraForward;
 
     public void Execute(in HealthBar healthBar, Entity entity)

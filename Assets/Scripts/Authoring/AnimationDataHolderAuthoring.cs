@@ -16,7 +16,7 @@ class AnimationDataHolderAuthoring : MonoBehaviour
             AnimationDataHolder animationDataHolder = new AnimationDataHolder();
             
             EntitiesGraphicsSystem entitiesGraphicsSystem = 
-                World.DefaultGameObjectInjectionWorld.CreateSystemManaged<EntitiesGraphicsSystem>();
+                World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<EntitiesGraphicsSystem>();
 
             BlobBuilder blobBuilder = new BlobBuilder(Allocator.Temp);
 
@@ -28,26 +28,30 @@ class AnimationDataHolderAuthoring : MonoBehaviour
             int index = 0;
             foreach (AnimationDataSO.AnimationType animationType in System.Enum.GetValues(typeof(AnimationDataSO.AnimationType)))
             {
+                Debug.Log("The Current Fucking Animation Type is Fucking : " + animationType);
                 AnimationDataSO animationDataSO = authoring.animationDataListSO.GetAnimationDataSO(animationType);
 
-                BlobBuilderArray<BatchMeshID> blobBuilderArray = 
+                BlobBuilderArray<BatchMeshID> blobBuilderArray =
                     blobBuilder.Allocate<BatchMeshID>(ref animationDataBlobBuilderArray[index].
                         batchMeshIdBlobArray, animationDataSO.meshArray.Length);
-                
-                animationDataBlobArray[index].frameTimerMax = animationDataSO.frameTimerMax;
-                animationDataBlobArray[index].frameMax = animationDataSO.meshArray.Length;
-                
+
+                animationDataBlobBuilderArray[index].frameTimerMax = animationDataSO.frameTimerMax;
+                animationDataBlobBuilderArray[index].frameMax = animationDataSO.meshArray.Length;
+
                 for (int i = 0; i < animationDataSO.meshArray.Length; i++)
                 {
                     Mesh mesh = animationDataSO.meshArray[i];
                     blobBuilderArray[i] = entitiesGraphicsSystem.RegisterMesh(mesh);
                 }
 
+                index++;
             }
 
-            animationDataHolder.animationDataBlobArrayBlobAssetReference = blobBuilder.CreateBlobAssetReference<BlobArray<AnimationData>>(Allocator.Persistent);
+            animationDataHolder.animationDataBlobArrayBlobAssetReference =
+                blobBuilder.CreateBlobAssetReference<BlobArray<AnimationData>>(Allocator.Persistent);
             blobBuilder.Dispose();
             AddBlobAsset(ref animationDataHolder.animationDataBlobArrayBlobAssetReference, out Unity.Entities.Hash128 objectHash);
+            
             AddComponent(entity, animationDataHolder);
         }
     }

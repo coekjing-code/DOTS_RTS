@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8df7be14b20a1ca469591f2dec4feee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationDataListSO: {fileID: 0}
+  animationDataListSO: {fileID: 11400000, guid: 14e0c4dd2322e6543baeb396fe924e69, type: 2}
   soldierWalk: {fileID: 11400000, guid: b76add286cafd1241b38e634e61caf9a, type: 2}
 --- !u!4 &59351891
 Transform:
@@ -496,7 +496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3180669929069784836, guid: 7f9130f5155a1ff42a4433719d3f6cf7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.6
+      value: -2.23
       objectReference: {fileID: 0}
     - target: {fileID: 3180669929069784836, guid: 7f9130f5155a1ff42a4433719d3f6cf7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -529,37 +529,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 589636673881142501, guid: 7f9130f5155a1ff42a4433719d3f6cf7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1880997080}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f9130f5155a1ff42a4433719d3f6cf7, type: 3}
---- !u!1 &1880997079 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 589636673881142501, guid: 7f9130f5155a1ff42a4433719d3f6cf7, type: 3}
-  m_PrefabInstance: {fileID: 1880997078}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1880997080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1880997079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28551cb07958ff349befa6e2021cb9b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextAnimationType: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 662973864}
+  - {fileID: 59351891}
   - {fileID: 1360639557}
   - {fileID: 424763327}
   - {fileID: 396412011}
   - {fileID: 1880997078}
   - {fileID: 238710653}
-  - {fileID: 59351891}

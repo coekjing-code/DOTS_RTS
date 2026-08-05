@@ -38,22 +38,24 @@ public partial struct UnitMoverJob : IJobEntity
     public float deltaTime;
     public void Execute(ref LocalTransform localTransform, ref UnitMover unitMover, ref PhysicsVelocity physicsVelocity)
     {
-            float3 moveDirection = unitMover.targetPosition - localTransform.Position;
+        float3 moveDirection = unitMover.targetPosition - localTransform.Position;
 
-            float reachTargetDistanceSq = UnitMoverSystem.REACH_TARGET_POSITION_SQ;
-            if (math.lengthsq(moveDirection) <= reachTargetDistanceSq)
-            {
-                physicsVelocity.Angular = float3.zero;
-                physicsVelocity.Linear = float3.zero;
-                return;
-            }
-
-            moveDirection = math.normalize(moveDirection);
-
-            localTransform.Rotation = math.slerp(localTransform.Rotation, quaternion.LookRotation(moveDirection, math.up()), 
-            unitMover.rotateSpeed * deltaTime);
-            
+        float reachTargetDistanceSq = UnitMoverSystem.REACH_TARGET_POSITION_SQ;
+        if (math.lengthsq(moveDirection) <= reachTargetDistanceSq)
+        {
             physicsVelocity.Angular = float3.zero;
-            physicsVelocity.Linear = moveDirection * unitMover.moveSpeed;
+            physicsVelocity.Linear = float3.zero;
+            unitMover.isMoving = false;
+            return;
+        }
+
+        unitMover.isMoving = true;
+        moveDirection = math.normalize(moveDirection);
+
+        localTransform.Rotation = math.slerp(localTransform.Rotation, quaternion.LookRotation(moveDirection, math.up()), 
+        unitMover.rotateSpeed * deltaTime);
+
+        physicsVelocity.Angular = float3.zero;
+        physicsVelocity.Linear = moveDirection * unitMover.moveSpeed;
     }
 }
