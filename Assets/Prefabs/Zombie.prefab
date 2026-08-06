@@ -39,13 +39,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8010461807916964372, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
+      propertyPath: idleAnimationType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8010461807916964372, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
+      propertyPath: walkAnimationType
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1228227546833300971, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: faction
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2180682226630739431, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
+      propertyPath: nextAnimationType
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5053927373286136524, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.64
+      value: -2.2
       objectReference: {fileID: 0}
     - target: {fileID: 5053927373286136524, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -53,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5053927373286136524, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 2.98
       objectReference: {fileID: 0}
     - target: {fileID: 5053927373286136524, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -83,9 +95,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5093832809708636421, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
+      propertyPath: loseTargetDistance
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7039319915722205336, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: range
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7039319915722205336, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: faction
@@ -186,5 +202,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerMax: 0.2
-  damageAmount: 10
+  damageAmount: 5
   collideSize: 0.3

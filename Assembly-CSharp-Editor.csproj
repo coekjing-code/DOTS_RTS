@@ -60,7 +60,6 @@
     <Analyzer Include="E:\UnityProject\Unity_Project\dots_-rts\Library\PackageCache\com.unity.entities@3142232a0e7c\Unity.Entities\SourceGenerators\Unity.Entities.Analyzer.CodeFixes.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Art\3D Characters Zombie City Streets Lowpoly Pack - Lite\Editor\RateAssetPopup.cs" />
     <Compile Include="Assets\Scripts\Editor\AnimationClipToFrameMeshBaker.cs" />
   </ItemGroup>
   <ItemGroup>

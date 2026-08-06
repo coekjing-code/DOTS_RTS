@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Authoring\AnimatedMeshAuthoring.cs" />
+    <Compile Include="Assets\Art\Supercyan Character Pack Zombie Sample\Scripts\ZombieCameraLogic.cs" />
     <Compile Include="Assets\Scripts\Authoring\FindTargetAuthoring.cs" />
     <Compile Include="Assets\Scripts\Authoring\HealthBarAuthoring.cs" />
     <Compile Include="Assets\Scripts\System\LoseTargetSystem.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Assets\Scripts\Authoring\ActiveAnimationAuthoring.cs" />
     <Compile Include="Assets\Scripts\System\ShootLightSpawnerSystem.cs" />
     <Compile Include="Assets\Scripts\Authoring\HealthAuthoring.cs" />
+    <Compile Include="Assets\Art\Supercyan Character Pack Zombie Sample\Scripts\ZombieFree.cs" />
     <Compile Include="Assets\Scripts\System\ZombieSpawnerSystem.cs" />
     <Compile Include="Assets\Scripts\UI\UnitSelectionManagerUI.cs" />
     <Compile Include="Assets\Scripts\System\ActiveAnimationSystem.cs" />
@@ -95,6 +97,7 @@
     <Compile Include="Assets\Scripts\System\SetupUnitMoverDefaultPositionSystem.cs" />
     <Compile Include="Assets\Scripts\System\SelectedVisualSystem.cs" />
     <Compile Include="Assets\Scripts\Authoring\TargetAuthoring.cs" />
+    <Compile Include="Assets\Art\Supercyan Character Pack Zombie Sample\Scripts\ZombieCharacterControl.cs" />
     <Compile Include="Assets\Scripts\System\MeleeAttackSystem.cs" />
     <Compile Include="Assets\Scripts\System\FindTargetSystem.cs" />
     <Compile Include="Assets\Scripts\System\BulletMoverSystem.cs" />
@@ -105,6 +108,7 @@
     <Compile Include="Assets\Scripts\Authoring\SelectedAuthoring.cs" />
     <Compile Include="Assets\Scripts\System\AnimationStateSystem.cs" />
     <Compile Include="Assets\Scripts\Authoring\EntitiesReferenceAuthoring.cs" />
+    <Compile Include="Assets\Art\WW2_German_soilders\Demo_scene\Test_stuff_for_the_scene\soilder_show.cs" />
     <Compile Include="Assets\Scripts\System\MoveOverrideSystem.cs" />
     <Compile Include="Assets\Scripts\Authoring\ZombieSpawnerAuthoring.cs" />
     <Compile Include="Assets\Scripts\Authoring\MoveOverrideAuthoring.cs" />
@@ -117,8 +121,11 @@
   <ItemGroup>
     <None Include="Assets\Art\ToonSoldiers_WW2_demo\ToonSoldiers_WW2_demo_README.txt" />
     <None Include="Assets\Art\kenney_prototype-textures\License.txt" />
-    <None Include="Assets\ToonSoldiers_WW2_demo\ToonSoldiers_WW2_demo_README.txt" />
+    <None Include="Assets\Art\Supercyan Character Pack Zombie Sample\Shaders\Legacy\CelShader.shader" />
+    <None Include="Assets\Art\Supercyan Character Pack Zombie Sample\Shaders\SupercyanShader.shader" />
+    <None Include="Assets\Art\WW2_German_soilders\Read_Me.txt" />
     <None Include="Assets\Art\OccaSoftware\Crosshairs\Readme.txt" />
+    <None Include="Assets\Art\Supercyan Character Pack Zombie Sample\Shaders\SupercyanShaderLighting.cginc" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

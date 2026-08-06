@@ -177,6 +177,7 @@ GameObject:
   - component: {fileID: 8143849701681905982}
   - component: {fileID: 1164612401590862688}
   - component: {fileID: 5054261994035909450}
+  - component: {fileID: 2180682226630739431}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
@@ -231,7 +232,6 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 1cef3382fdcf7af4d8520c90e7e23d69, type: 2}
-  - {fileID: 2100000, guid: ffcd02750402e264babfe88a9b5f9422, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -253,6 +253,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2180682226630739431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3670394320600702813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28551cb07958ff349befa6e2021cb9b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextAnimationType: 0
 --- !u!1 &7073436717731348781
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,6 +286,8 @@ GameObject:
   - component: {fileID: -4022535837502013386}
   - component: {fileID: 5093832809708636421}
   - component: {fileID: 7899338578903208326}
+  - component: {fileID: 1414780140519041443}
+  - component: {fileID: -8010461807916964372}
   m_Layer: 6
   m_Name: BaseUnit
   m_TagString: Untagged
@@ -469,6 +484,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 340d83f3d7e1d844dbbe5ed04013a82e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1414780140519041443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7073436717731348781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea9ecb49af03dc44dafd3909c5403fa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshGameObject: {fileID: 3670394320600702813}
+--- !u!114 &-8010461807916964372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7073436717731348781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa65b483bb205cb49ba4e9a7b107c4cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleAnimationType: 0
+  walkAnimationType: 0
 --- !u!1 &8514030758395643477
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,7 +1,6 @@
 using Unity.Burst;
 using Unity.Entities;
 using Unity.Rendering;
-using UnityEngine;
 
 partial struct ActiveAnimationSystem : ISystem
 {
@@ -41,6 +40,11 @@ partial struct ActiveAnimationSystem : ISystem
                     (activeAnimation.ValueRO.frame + 1) % animationData.frameMax;
 
                 materialMeshInfo.ValueRW.MeshID = animationData.batchMeshIdBlobArray[activeAnimation.ValueRO.frame];
+
+                if (activeAnimation.ValueRO.frame == 0 && activeAnimation.ValueRO.activeAnimationType == AnimationDataSO.AnimationType.SoldierShoot)
+                {
+                    activeAnimation.ValueRW.nextAnimationType = AnimationDataSO.AnimationType.None;
+                }
             }
         }
     }

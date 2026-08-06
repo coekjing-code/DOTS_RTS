@@ -1,0 +1,1795 @@
+fileFormatVersion: 2
+guid: 86cecc50967b26d4693b7e59e3815120
+AssetOrigin:
+  serializedVersion: 1
+  productId: 106450
+  packageName: POLYGON WW2 German Soilders
+  packageVersion: 1.0
+  assetPath: Assets/WW2_German_soilders/Soilders/FBX_soilders/Wehrmacht_B/mesh/Wehrmacht_soilder_B.fbx
+  uploadId: 222933
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Bone
+  - first:
+      1: 100002
+    second: Bone.001
+  - first:
+      1: 100004
+    second: Bone.002
+  - first:
+      1: 100006
+    second: Bone.003
+  - first:
+      1: 100008
+    second: Bone.004
+  - first:
+      1: 100010
+    second: Bone.005
+  - first:
+      1: 100012
+    second: Bone.006
+  - first:
+      1: 100014
+    second: Bone.007
+  - first:
+      1: 100016
+    second: Bone.008
+  - first:
+      1: 100018
+    second: Bone.008_end
+  - first:
+      1: 100020
+    second: Bone.009
+  - first:
+      1: 100022
+    second: Bone.009_end
+  - first:
+      1: 100024
+    second: Bone.010
+  - first:
+      1: 100026
+    second: Bone.011
+  - first:
+      1: 100028
+    second: Bone.012
+  - first:
+      1: 100030
+    second: Bone.012_end
+  - first:
+      1: 100032
+    second: Bone.013
+  - first:
+      1: 100034
+    second: Bone.013_end
+  - first:
+      1: 100036
+    second: Bone.014
+  - first:
+      1: 100038
+    second: Bone.015
+  - first:
+      1: 100040
+    second: Bone.016
+  - first:
+      1: 100042
+    second: Bone.017
+  - first:
+      1: 100044
+    second: Bone.018
+  - first:
+      1: 100046
+    second: Bone.019
+  - first:
+      1: 100048
+    second: Bone.020
+  - first:
+      1: 100050
+    second: Bone.021
+  - first:
+      1: 100052
+    second: Bone.022
+  - first:
+      1: 100054
+    second: Bone.022_end
+  - first:
+      1: 100056
+    second: Bone.023
+  - first:
+      1: 100058
+    second: Bone.023_end
+  - first:
+      1: 100060
+    second: Bone.024
+  - first:
+      1: 100062
+    second: Bone.025
+  - first:
+      1: 100064
+    second: Bone.025_end
+  - first:
+      1: 100066
+    second: Flammenwerfer
+  - first:
+      1: 100068
+    second: Helmet
+  - first:
+      1: 100070
+    second: Jacket
+  - first:
+      1: 100072
+    second: K98
+  - first:
+      1: 100074
+    second: Luger_P08
+  - first:
+      1: 100076
+    second: MG42
+  - first:
+      1: 100078
+    second: MP40
+  - first:
+      1: 100080
+    second: Panzerfaust_launcher
+  - first:
+      1: 100082
+    second: PanzerSchreck
+  - first:
+      1: 100084
+    second: STG44
+  - first:
+      1: 100086
+    second: Throusers
+  - first:
+      1: 100088
+    second: Weapon_handle
+  - first:
+      1: 100090
+    second: Weapon_handle.001
+  - first:
+      1: 100092
+    second: Weapon_handle.001_end
+  - first:
+      1: 100094
+    second: Weapon_handle.002
+  - first:
+      1: 100096
+    second: Weapon_handle.002_end
+  - first:
+      1: 100098
+    second: Weapon_handle.003
+  - first:
+      1: 100100
+    second: Weapon_handle.003_end
+  - first:
+      1: 100102
+    second: Weapon_handle.004
+  - first:
+      1: 100104
+    second: Weapon_handle.004_end
+  - first:
+      1: 100106
+    second: Weapon_handle_end
+  - first:
+      1: 100108
+    second: Wehrmacht_B
+  - first:
+      1: 100110
+    second: //RootNode
+  - first:
+      1: 100112
+    second: Wehrmacht_soilder_b
+  - first:
+      1: 100114
+    second: Wehrmacht_B_rig
+  - first:
+      4: 400000
+    second: Bone
+  - first:
+      4: 400002
+    second: Bone.001
+  - first:
+      4: 400004
+    second: Bone.002
+  - first:
+      4: 400006
+    second: Bone.003
+  - first:
+      4: 400008
+    second: Bone.004
+  - first:
+      4: 400010
+    second: Bone.005
+  - first:
+      4: 400012
+    second: Bone.006
+  - first:
+      4: 400014
+    second: Bone.007
+  - first:
+      4: 400016
+    second: Bone.008
+  - first:
+      4: 400018
+    second: Bone.008_end
+  - first:
+      4: 400020
+    second: Bone.009
+  - first:
+      4: 400022
+    second: Bone.009_end
+  - first:
+      4: 400024
+    second: Bone.010
+  - first:
+      4: 400026
+    second: Bone.011
+  - first:
+      4: 400028
+    second: Bone.012
+  - first:
+      4: 400030
+    second: Bone.012_end
+  - first:
+      4: 400032
+    second: Bone.013
+  - first:
+      4: 400034
+    second: Bone.013_end
+  - first:
+      4: 400036
+    second: Bone.014
+  - first:
+      4: 400038
+    second: Bone.015
+  - first:
+      4: 400040
+    second: Bone.016
+  - first:
+      4: 400042
+    second: Bone.017
+  - first:
+      4: 400044
+    second: Bone.018
+  - first:
+      4: 400046
+    second: Bone.019
+  - first:
+      4: 400048
+    second: Bone.020
+  - first:
+      4: 400050
+    second: Bone.021
+  - first:
+      4: 400052
+    second: Bone.022
+  - first:
+      4: 400054
+    second: Bone.022_end
+  - first:
+      4: 400056
+    second: Bone.023
+  - first:
+      4: 400058
+    second: Bone.023_end
+  - first:
+      4: 400060
+    second: Bone.024
+  - first:
+      4: 400062
+    second: Bone.025
+  - first:
+      4: 400064
+    second: Bone.025_end
+  - first:
+      4: 400066
+    second: Flammenwerfer
+  - first:
+      4: 400068
+    second: Helmet
+  - first:
+      4: 400070
+    second: Jacket
+  - first:
+      4: 400072
+    second: K98
+  - first:
+      4: 400074
+    second: Luger_P08
+  - first:
+      4: 400076
+    second: MG42
+  - first:
+      4: 400078
+    second: MP40
+  - first:
+      4: 400080
+    second: Panzerfaust_launcher
+  - first:
+      4: 400082
+    second: PanzerSchreck
+  - first:
+      4: 400084
+    second: STG44
+  - first:
+      4: 400086
+    second: Throusers
+  - first:
+      4: 400088
+    second: Weapon_handle
+  - first:
+      4: 400090
+    second: Weapon_handle.001
+  - first:
+      4: 400092
+    second: Weapon_handle.001_end
+  - first:
+      4: 400094
+    second: Weapon_handle.002
+  - first:
+      4: 400096
+    second: Weapon_handle.002_end
+  - first:
+      4: 400098
+    second: Weapon_handle.003
+  - first:
+      4: 400100
+    second: Weapon_handle.003_end
+  - first:
+      4: 400102
+    second: Weapon_handle.004
+  - first:
+      4: 400104
+    second: Weapon_handle.004_end
+  - first:
+      4: 400106
+    second: Weapon_handle_end
+  - first:
+      4: 400108
+    second: Wehrmacht_B
+  - first:
+      4: 400110
+    second: //RootNode
+  - first:
+      4: 400112
+    second: Wehrmacht_soilder_b
+  - first:
+      4: 400114
+    second: Wehrmacht_B_rig
+  - first:
+      43: 4300000
+    second: Helmet
+  - first:
+      43: 4300002
+    second: Throusers
+  - first:
+      43: 4300004
+    second: STG44
+  - first:
+      43: 4300006
+    second: Panzerfaust_launcher
+  - first:
+      43: 4300008
+    second: PanzerSchreck
+  - first:
+      43: 4300010
+    second: Flammenwerfer
+  - first:
+      43: 4300012
+    second: MG42
+  - first:
+      43: 4300014
+    second: Luger_P08
+  - first:
+      43: 4300016
+    second: K98
+  - first:
+      43: 4300018
+    second: MP40
+  - first:
+      43: 4300020
+    second: Wehrmacht_soilder_b
+  - first:
+      43: 4300022
+    second: Jacket
+  - first:
+      74: 7400000
+    second: Wehrmacht_B|Deleted
+  - first:
+      74: 7400002
+    second: Wehrmacht_B|Flammenwerfer_idle
+  - first:
+      74: 7400004
+    second: Wehrmacht_B|German_soilder_Rig.001|German_soilder_Rig|Deleted|German_soilde
+  - first:
+      74: 7400006
+    second: Wehrmacht_B|German_soilder_Rig.001|German_soilder_Rig|Flammenwerfer_idle|Ge
+  - first:
+      74: 7400008
+    second: Wehrmacht_B|German_soilder_Rig.001|German_soilder_Rig|Idle|German_soilder_R
+  - first:
+      74: 7400010
+    second: Wehrmacht_B|German_soilder_Rig.001|German_soilder_Rig|K98_aim|German_soilde
+  - first:
+      74: 7400012
+    second: Wehrmacht_B|German_soilder_Rig.001|German_soilder_Rig|K98_idle|German_soild
+  - first:
+      74: 7400014
+    second: Wehrmacht_B|German_soilder_Rig.001|German_soilder_Rig|K98_reload_Shoot|Germ
+  - first:
+      74: 7400016
+    second: Wehrmacht_B|German_soilder_Rig.001|German_soilder_Rig|K98_reload|German_soi
+  - first:
+      74: 7400018
+    second: Wehrmacht_B|German_soilder_Rig.001|German_soilder_Rig|Luger_aim|German_soil
+  - first:
+      74: 7400020
+    second: Wehrmacht_B|German_soilder_Rig.001|German_soilder_Rig|Luger_idle|German_soi
+  - first:
+      74: 7400022
+    second: Wehrmacht_B|German_soilder_Rig.001|German_soilder_Rig|Luger_reload|German_s
+  - first:
+      74: 7400024
+    second: Wehrmacht_B|German_soilder_Rig.001|German_soilder_Rig|MG42_aim|German_soild
+  - first:
+      74: 7400026
+    second: Wehrmacht_B|German_soilder_Rig.001|German_soilder_Rig|MG42_idle|German_soil
+  - first:
+      74: 7400028
+    second: Wehrmacht_B|German_soilder_Rig.001|German_soilder_Rig|MG42_reload|German_so
+  - first:
+      74: 7400030
+    second: Wehrmacht_B|German_soilder_Rig.001|German_soilder_Rig|MP40_aim|German_soild
+  - first:
+      74: 7400032
+    second: Wehrmacht_B|German_soilder_Rig.001|German_soilder_Rig|MP40_idle|German_soil
+  - first:
+      74: 7400034
+    second: Wehrmacht_B|German_soilder_Rig.001|German_soilder_Rig|MP40_reload|German_so
+  - first:
+      74: 7400036
+    second: Wehrmacht_B|German_soilder_Rig.001|German_soilder_Rig|Panzerfaust_idle|Germ
+  - first:
+      74: 7400038
+    second: Wehrmacht_B|German_soilder_Rig.001|German_soilder_Rig|Panzerfaust_reload|Ge
+  - first:
+      74: 7400040
+    second: Wehrmacht_B|German_soilder_Rig.001|German_soilder_Rig|Panzerschreck_idle|Ge
+  - first:
+      74: 7400042
+    second: Wehrmacht_B|German_soilder_Rig.001|German_soilder_Rig|Panzerschreck_Reload|
+  - first:
+      74: 7400044
+    second: Wehrmacht_B|German_soilder_Rig.001|German_soilder_Rig|STG44_Aim|German_soil
+  - first:
+      74: 7400046
+    second: Wehrmacht_B|German_soilder_Rig.001|German_soilder_Rig|STG44_idle|German_soi
+  - first:
+      74: 7400048
+    second: Wehrmacht_B|German_soilder_Rig.001|German_soilder_Rig|STG44_reload|German_s
+  - first:
+      74: 7400050
+    second: Wehrmacht_B|German_soilder_Rig.001|German_soilder_Rig|Walk|German_soilder_R
+  - first:
+      74: 7400052
+    second: Wehrmacht_B|Idle
+  - first:
+      74: 7400054
+    second: Wehrmacht_B|K98_aim
+  - first:
+      74: 7400056
+    second: Wehrmacht_B|K98_idle
+  - first:
+      74: 7400058
+    second: Wehrmacht_B|K98_reload
+  - first:
+      74: 7400060
+    second: Wehrmacht_B|K98_reload_Shoot
+  - first:
+      74: 7400062
+    second: Wehrmacht_B|Luger_aim
+  - first:
+      74: 7400064
+    second: Wehrmacht_B|Luger_idle
+  - first:
+      74: 7400066
+    second: Wehrmacht_B|Luger_reload
+  - first:
+      74: 7400068
+    second: Wehrmacht_B|MG42_aim
+  - first:
+      74: 7400070
+    second: Wehrmacht_B|MG42_idle
+  - first:
+      74: 7400072
+    second: Wehrmacht_B|MG42_reload
+  - first:
+      74: 7400074
+    second: Wehrmacht_B|MP40_aim
+  - first:
+      74: 7400076
+    second: Wehrmacht_B|MP40_idle
+  - first:
+      74: 7400078
+    second: Wehrmacht_B|MP40_reload
+  - first:
+      74: 7400080
+    second: Wehrmacht_B|Panzerfaust_idle
+  - first:
+      74: 7400082
+    second: Wehrmacht_B|Panzerfaust_reload
+  - first:
+      74: 7400084
+    second: Wehrmacht_B|Panzerschreck_idle
+  - first:
+      74: 7400086
+    second: Wehrmacht_B|Panzerschreck_Reload
+  - first:
+      74: 7400088
+    second: Wehrmacht_B|STG44_Aim
+  - first:
+      74: 7400090
+    second: Wehrmacht_B|STG44_idle
+  - first:
+      74: 7400092
+    second: Wehrmacht_B|STG44_reload
+  - first:
+      74: 7400094
+    second: Wehrmacht_B|Walk
+  - first:
+      74: 7400096
+    second: Wehrmacht_B_rig|Flammenwerfer_idle
+  - first:
+      74: 7400098
+    second: Wehrmacht_B_rig|Idle
+  - first:
+      74: 7400100
+    second: Wehrmacht_B_rig|K98_aim
+  - first:
+      74: 7400102
+    second: Wehrmacht_B_rig|K98_idle
+  - first:
+      74: 7400104
+    second: Wehrmacht_B_rig|K98_reload
+  - first:
+      74: 7400106
+    second: Wehrmacht_B_rig|K98_reload_Shoot
+  - first:
+      74: 7400108
+    second: Wehrmacht_B_rig|Luger_aim
+  - first:
+      74: 7400110
+    second: Wehrmacht_B_rig|Luger_idle
+  - first:
+      74: 7400112
+    second: Wehrmacht_B_rig|Luger_reload
+  - first:
+      74: 7400114
+    second: Wehrmacht_B_rig|MG42_aim
+  - first:
+      74: 7400116
+    second: Wehrmacht_B_rig|MG42_idle
+  - first:
+      74: 7400118
+    second: Wehrmacht_B_rig|MG42_reload
+  - first:
+      74: 7400120
+    second: Wehrmacht_B_rig|MP40_aim
+  - first:
+      74: 7400122
+    second: Wehrmacht_B_rig|MP40_idle
+  - first:
+      74: 7400124
+    second: Wehrmacht_B_rig|MP40_reload
+  - first:
+      74: 7400126
+    second: Wehrmacht_B_rig|Panzerfaust_reload
+  - first:
+      74: 7400128
+    second: Wehrmacht_B_rig|Panzerfaust_idle
+  - first:
+      74: 7400130
+    second: Wehrmacht_B_rig|Panzerschreck_idle
+  - first:
+      74: 7400132
+    second: Wehrmacht_B_rig|Panzerschreck_Reload
+  - first:
+      74: 7400134
+    second: Wehrmacht_B_rig|STG44_Aim
+  - first:
+      74: 7400136
+    second: Wehrmacht_B_rig|STG44_idle
+  - first:
+      74: 7400138
+    second: Wehrmacht_B_rig|STG44_reload
+  - first:
+      74: 7400140
+    second: Wehrmacht_B_rig|Walk
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      111: 11100000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Flammenwerfer
+  - first:
+      137: 13700002
+    second: Helmet
+  - first:
+      137: 13700004
+    second: Jacket
+  - first:
+      137: 13700006
+    second: K98
+  - first:
+      137: 13700008
+    second: Luger_P08
+  - first:
+      137: 13700010
+    second: MG42
+  - first:
+      137: 13700012
+    second: MP40
+  - first:
+      137: 13700014
+    second: Panzerfaust_launcher
+  - first:
+      137: 13700016
+    second: PanzerSchreck
+  - first:
+      137: 13700018
+    second: STG44
+  - first:
+      137: 13700020
+    second: Throusers
+  - first:
+      137: 13700022
+    second: Wehrmacht_soilder_b
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bullet_magazine
+    second: {fileID: 2100000, guid: b3ce221cc0142544c92c92bfd8c3cbf7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bullet_magazine.001
+    second: {fileID: 2100000, guid: 8d8fbb6226843ed4ea487e51e459f50c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bullets
+    second: {fileID: 2100000, guid: cc3db4b2b2778f04d97a51efefe1fc4d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bullets_magazine
+    second: {fileID: 2100000, guid: 95a35336f4b09f84a855fc5eb8b193b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bullets_magazine.001
+    second: {fileID: 2100000, guid: 6a11501c7c849a741855bec4df1b71af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Main
+    second: {fileID: 2100000, guid: 3e107c6be540310488a3b1ef53d6295a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Main.001
+    second: {fileID: 2100000, guid: 873b5cd4c2c9853469386925d423efa2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Main.002
+    second: {fileID: 2100000, guid: 9c21c289b65194a40bac58cd5213321f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Main.003
+    second: {fileID: 2100000, guid: 9c38ae184af941342938d58cd9bdf463, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Main.004
+    second: {fileID: 2100000, guid: 4bb1fd4a97a38e34ca72da764fa61667, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Main.005
+    second: {fileID: 2100000, guid: f5cb48d5291244f4f80026016ee4d3ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Main.006
+    second: {fileID: 2100000, guid: d5ea675675319894a84cdf51e307ce04, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 55a3692f0f6dc1647ba24fdad0b07d91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rocket_reload
+    second: {fileID: 2100000, guid: e3ed9d9574389084fa2727b2d3113895, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wehrmacht_B_Helmet
+    second: {fileID: 2100000, guid: 858ea5b80f2e09b429c6a6f7a93e90ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wehrmacht_B_SKIN
+    second: {fileID: 2100000, guid: 2f98ae31bbc2b9f4fb5ec6da97dc404b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wehrmacht_B_jacket
+    second: {fileID: 2100000, guid: 68714900d99fae04c885b6619395a995, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wehrmacht_B_throusers
+    second: {fileID: 2100000, guid: b1d18852ffccff24d8941604bde2cbd5, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Wehrmacht_B_rig|Flammenwerfer_idle
+      takeName: Wehrmacht_B_rig|Flammenwerfer_idle
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 5
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Wehrmacht_B_rig|Idle
+      takeName: Wehrmacht_B_rig|Idle
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Wehrmacht_B_rig|K98_aim
+      takeName: Wehrmacht_B_rig|K98_aim
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Wehrmacht_B_rig|K98_idle
+      takeName: Wehrmacht_B_rig|K98_idle
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 5
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Wehrmacht_B_rig|K98_reload
+      takeName: Wehrmacht_B_rig|K98_reload
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 46
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Wehrmacht_B_rig|K98_reload_Shoot
+      takeName: Wehrmacht_B_rig|K98_reload_Shoot
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 42
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Wehrmacht_B_rig|Luger_aim
+      takeName: Wehrmacht_B_rig|Luger_aim
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Wehrmacht_B_rig|Luger_idle
+      takeName: Wehrmacht_B_rig|Luger_idle
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 5
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Wehrmacht_B_rig|Luger_reload
+      takeName: Wehrmacht_B_rig|Luger_reload
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 44
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Wehrmacht_B_rig|MG42_aim
+      takeName: Wehrmacht_B_rig|MG42_aim
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Wehrmacht_B_rig|MG42_idle
+      takeName: Wehrmacht_B_rig|MG42_idle
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 5
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Wehrmacht_B_rig|MG42_reload
+      takeName: Wehrmacht_B_rig|MG42_reload
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 14
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Wehrmacht_B_rig|MP40_aim
+      takeName: Wehrmacht_B_rig|MP40_aim
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Wehrmacht_B_rig|MP40_idle
+      takeName: Wehrmacht_B_rig|MP40_idle
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 5
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Wehrmacht_B_rig|MP40_reload
+      takeName: Wehrmacht_B_rig|MP40_reload
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 18
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Wehrmacht_B_rig|Panzerfaust_reload
+      takeName: Wehrmacht_B_rig|Panzerfaust_reload
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Wehrmacht_B_rig|Panzerfaust_idle
+      takeName: Wehrmacht_B_rig|Panzerfaust_idle
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 5
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Wehrmacht_B_rig|Panzerschreck_idle
+      takeName: Wehrmacht_B_rig|Panzerschreck_idle
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 5
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Wehrmacht_B_rig|Panzerschreck_Reload
+      takeName: Wehrmacht_B_rig|Panzerschreck_Reload
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Wehrmacht_B_rig|STG44_Aim
+      takeName: Wehrmacht_B_rig|STG44_Aim
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Wehrmacht_B_rig|STG44_idle
+      takeName: Wehrmacht_B_rig|STG44_idle
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 5
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Wehrmacht_B_rig|STG44_reload
+      takeName: Wehrmacht_B_rig|STG44_reload
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 12
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Wehrmacht_B_rig|Walk
+      takeName: Wehrmacht_B_rig|Walk
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: Wehrmacht_soilder_B(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Wehrmacht_B_rig
+      parentName: Wehrmacht_soilder_B(Clone)
+      position: {x: -0.00024603558, y: 0.85304576, z: 0.03514203}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 29.455206, y: 29.455206, z: 29.455206}
+    - name: Bone
+      parentName: Wehrmacht_B_rig
+      position: {x: -0, y: 0, z: -0.0019177647}
+      rotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+      scale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
+    - name: Bone.001
+      parentName: Bone
+      position: {x: -0, y: 0.010993346, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone.002
+      parentName: Bone.001
+      position: {x: -0, y: 0.009412176, z: 0}
+      rotation: {x: 0.5654587, y: -0.42456615, z: -0.56545866, w: -0.42456645}
+      scale: {x: 1.0000017, y: 1.0000019, z: 1.0000012}
+    - name: Bone.004
+      parentName: Bone.002
+      position: {x: -7.773275e-12, y: 0.0066127437, z: -5.5726557e-10}
+      rotation: {x: -0.14089234, y: -0, z: -0.00000008940696, w: -0.9900249}
+      scale: {x: 1.000001, y: 1.0000007, z: 1.0000024}
+    - name: Bone.006
+      parentName: Bone.004
+      position: {x: -8.9406965e-10, y: 0.01028236, z: -2.9802322e-10}
+      rotation: {x: -0.000000014901159, y: -0, z: -7.1054265e-15, w: 1}
+      scale: {x: 1, y: 0.9999992, z: 0.99999994}
+    - name: Bone.008
+      parentName: Bone.006
+      position: {x: -4.4703483e-10, y: 0.013885754, z: -5.9604643e-10}
+      rotation: {x: 0.37800407, y: 0.00000005179176, z: -0.000000030772696, w: 0.925804}
+      scale: {x: 1.000003, y: 1.0000019, z: 1.0000019}
+    - name: Bone.008_end
+      parentName: Bone.008
+      position: {x: -0, y: 0.0040640444, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone.010
+      parentName: Bone.006
+      position: {x: -4.4703483e-10, y: 0.013885754, z: -5.9604643e-10}
+      rotation: {x: 0.000000059604638, y: 0.00000004425755, z: -0.0000000062983774, w: 1}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1.0000014}
+    - name: Bone.012
+      parentName: Bone.010
+      position: {x: -8.9406965e-10, y: 0.0030382161, z: 7.45058e-10}
+      rotation: {x: -0, y: -0.00000000839784, z: -0.00000005901008, w: 1}
+      scale: {x: 1.0000008, y: 1.0000006, z: 1.0000017}
+    - name: Bone.012_end
+      parentName: Bone.012
+      position: {x: -0, y: 0.0027881716, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone.003
+      parentName: Bone.001
+      position: {x: -0, y: 0.009412176, z: 0}
+      rotation: {x: 0.56513655, y: 0.42499483, z: 0.5651365, w: -0.424995}
+      scale: {x: 1.0000014, y: 1.0000004, z: 1.0000011}
+    - name: Bone.005
+      parentName: Bone.003
+      position: {x: 5.87395e-12, y: 0.006647457, z: 6.4224875e-10}
+      rotation: {x: -0.14014155, y: 0.000000014901161, z: 0.000000059604645, w: -0.99013156}
+      scale: {x: 1.0000017, y: 1.0000005, z: 1.0000031}
+    - name: Bone.007
+      parentName: Bone.005
+      position: {x: -0.000000001490116, y: 0.010282365, z: 0.0000000015646219}
+      rotation: {x: -0, y: -0, z: -2.664535e-15, w: 1}
+      scale: {x: 0.9999997, y: 1.0000007, z: 0.9999999}
+    - name: Bone.009
+      parentName: Bone.007
+      position: {x: 1.862645e-10, y: 0.013885758, z: -1.4901161e-10}
+      rotation: {x: 0.378004, y: 0.00000010192824, z: 0.00000003561662, w: 0.92580396}
+      scale: {x: 1.0000011, y: 0.9999984, z: 1.0000032}
+    - name: Bone.009_end
+      parentName: Bone.009
+      position: {x: -0, y: 0.0040640444, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone.011
+      parentName: Bone.007
+      position: {x: 1.862645e-10, y: 0.013885758, z: -1.4901161e-10}
+      rotation: {x: -0.000000014901159, y: 0.00000003368476, z: 0.000000025331673, w: 1}
+      scale: {x: 1.000001, y: 1.0000008, z: 1.0000004}
+    - name: Bone.013
+      parentName: Bone.011
+      position: {x: 2.9802322e-10, y: 0.0030382152, z: 1.4901161e-10}
+      rotation: {x: 0.000000119209275, y: 0.000000008353086, z: 0.000000059016433, w: 1}
+      scale: {x: 1.0000002, y: 1.000001, z: 1.0000014}
+    - name: Bone.013_end
+      parentName: Bone.013
+      position: {x: -0, y: 0.0027881716, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_handle
+      parentName: Bone.011
+      position: {x: 0.0013301917, y: 0.0040637203, z: -0.0037019157}
+      rotation: {x: 0.37010965, y: 0.8455438, z: -0.10532566, w: 0.37010947}
+      scale: {x: 1.0000005, y: 0.96888125, z: 0.9999997}
+    - name: Weapon_handle_end
+      parentName: Weapon_handle
+      position: {x: -0, y: 0.0035292457, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_handle.001
+      parentName: Bone.011
+      position: {x: 0.0009757539, y: 0.0093434835, z: -0.00024027556}
+      rotation: {x: 0.033926137, y: 0.70629257, z: 0.033926208, w: 0.7062923}
+      scale: {x: 1.0000006, y: 0.9999999, z: 1.0000001}
+    - name: Weapon_handle.001_end
+      parentName: Weapon_handle.001
+      position: {x: -0, y: 0.0035292457, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_handle.002
+      parentName: Bone.011
+      position: {x: 0.00041438625, y: 0.015487957, z: 0.003647801}
+      rotation: {x: 0.50000006, y: 0.49999985, z: 0.50000006, w: 0.5}
+      scale: {x: 1, y: 1.000001, z: 0.9999997}
+    - name: Weapon_handle.002_end
+      parentName: Weapon_handle.002
+      position: {x: -0, y: 0.0035292457, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_handle.003
+      parentName: Bone.011
+      position: {x: -0.00025744986, y: 0.0037211375, z: 0.00007626958}
+      rotation: {x: 0.033925846, y: 0.70629245, z: 0.033925783, w: 0.70629257}
+      scale: {x: 1.0000002, y: 1.0000011, z: 0.9999994}
+    - name: Weapon_handle.003_end
+      parentName: Weapon_handle.003
+      position: {x: -0, y: 0.0035292457, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon_handle.004
+      parentName: Bone.011
+      position: {x: -0.003773611, y: -0.001011598, z: -0.0025190148}
+      rotation: {x: 0.03392524, y: 0.70629257, z: 0.03392546, w: 0.70629245}
+      scale: {x: 0.9999999, y: 1.0000007, z: 0.99999934}
+    - name: Weapon_handle.004_end
+      parentName: Weapon_handle.004
+      position: {x: -0, y: 0.0035292457, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone.024
+      parentName: Bone.001
+      position: {x: -0, y: 0.009412176, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 0.9999999, z: 0.9999999}
+    - name: Bone.025
+      parentName: Bone.024
+      position: {x: -0, y: 0.0030273343, z: -4.6566128e-12}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: Bone.025_end
+      parentName: Bone.025
+      position: {x: -0, y: 0.007923107, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone.014
+      parentName: Wehrmacht_B_rig
+      position: {x: -0, y: 8.881784e-18, z: -0.0019177647}
+      rotation: {x: 0.028626978, y: 0.028627127, z: -0.706527, w: -0.7065271}
+      scale: {x: 1.0000007, y: 1.0000012, z: 1.0000005}
+    - name: Bone.016
+      parentName: Bone.014
+      position: {x: 1.110222e-18, y: 0.0034378793, z: 1.8626451e-11}
+      rotation: {x: -0.4658508, y: 0.5319616, z: -0.46585068, w: 0.5319616}
+      scale: {x: 1.0000005, y: 1.0000044, z: 1.0000058}
+    - name: Bone.018
+      parentName: Bone.016
+      position: {x: 9.313225e-11, y: 0.010666154, z: 6.661647e-11}
+      rotation: {x: 0.011594086, y: -0.00020241734, z: -0.017510531, w: 0.99977946}
+      scale: {x: 0.999999, y: 1.0000002, z: 1.0000001}
+    - name: Bone.020
+      parentName: Bone.018
+      position: {x: 7.959897e-11, y: 0.014686198, z: -1.9892468e-10}
+      rotation: {x: 0.006239089, y: 0.750203, z: -0.66115737, w: -0.0052458523}
+      scale: {x: 1.0000054, y: 1.0000036, z: 1.0000026}
+    - name: Bone.022
+      parentName: Bone.020
+      position: {x: 5.480714e-10, y: 0.004391127, z: 0.0000000023535045}
+      rotation: {x: 0.07453567, y: -0.00000080047164, z: 0.00000005727633, w: 0.9972184}
+      scale: {x: 1.0000012, y: 0.9999985, z: 1.0000006}
+    - name: Bone.022_end
+      parentName: Bone.022
+      position: {x: -0, y: 0.0042004297, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone.015
+      parentName: Wehrmacht_B_rig
+      position: {x: 9.3132255e-12, y: 3.5527136e-17, z: -0.0019177645}
+      rotation: {x: 0.028572798, y: -0.028572917, z: 0.70652914, w: -0.7065294}
+      scale: {x: 1.0000005, y: 1.0000006, z: 1.000001}
+    - name: Bone.017
+      parentName: Bone.015
+      position: {x: 3.1086248e-17, y: 0.0034443934, z: -1.11758706e-10}
+      rotation: {x: -0.4658917, y: -0.5319258, z: 0.46589136, w: 0.5319259}
+      scale: {x: 1.0000014, y: 1.0000048, z: 1.0000063}
+    - name: Bone.019
+      parentName: Bone.017
+      position: {x: -2.3748725e-10, y: 0.010666155, z: 7.358152e-10}
+      rotation: {x: 0.011594175, y: 0.00020238754, z: 0.017510531, w: 0.99977946}
+      scale: {x: 0.9999991, y: 1.0000006, z: 1.0000012}
+    - name: Bone.021
+      parentName: Bone.019
+      position: {x: 6.519258e-11, y: 0.0146862, z: -3.982859e-10}
+      rotation: {x: -0.0062381183, y: 0.75020295, z: -0.6611575, w: 0.005244777}
+      scale: {x: 1.0000048, y: 1.000004, z: 1.0000024}
+    - name: Bone.023
+      parentName: Bone.021
+      position: {x: 1.8486048e-11, y: 0.0043911273, z: 0.0000000029553853}
+      rotation: {x: 0.07453551, y: -0.00000066030753, z: 0.000000096391865, w: 0.9972184}
+      scale: {x: 1.0000014, y: 0.99999845, z: 1.0000012}
+    - name: Bone.023_end
+      parentName: Bone.023
+      position: {x: -0, y: 0.0042004297, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Helmet
+      parentName: Wehrmacht_soilder_B(Clone)
+      position: {x: 0.0007356042, y: 1.7120178, z: 0.0062148315}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 102.34256, y: 102.34256, z: 102.34256}
+    - name: Throusers
+      parentName: Wehrmacht_soilder_B(Clone)
+      position: {x: 0.00046537834, y: 0.37186038, z: 0.037778117}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 99.999985, y: 99.999985, z: 99.99999}
+    - name: STG44
+      parentName: Wehrmacht_soilder_B(Clone)
+      position: {x: 0.99883175, y: 1.4901744, z: 1.3894234}
+      rotation: {x: 0.000000053385083, y: 0.7071068, z: 0.70710677, w: -0.00000005338507}
+      scale: {x: 3.5761728, y: 3.3422594, z: 3.3422594}
+    - name: Panzerfaust_launcher
+      parentName: Wehrmacht_soilder_B(Clone)
+      position: {x: 0.98795813, y: 1.4459862, z: 0.6001343}
+      rotation: {x: -0.7071069, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 7.228233, y: 7.228233, z: 7.228233}
+    - name: PanzerSchreck
+      parentName: Wehrmacht_soilder_B(Clone)
+      position: {x: 1.0172583, y: 1.4745682, z: 0.19318965}
+      rotation: {x: -0.7071069, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 16.519562, y: 16.519562, z: 16.519562}
+    - name: Flammenwerfer
+      parentName: Wehrmacht_soilder_B(Clone)
+      position: {x: 1.2123084, y: 1.6701422, z: 0.6569438}
+      rotation: {x: -0.000000053385087, y: 0.7071068, z: 0.70710677, w: 0.00000005338507}
+      scale: {x: 14.169873, y: 14.169873, z: 14.169873}
+    - name: MG42
+      parentName: Wehrmacht_soilder_B(Clone)
+      position: {x: 0.9655926, y: 1.3227985, z: 0.7485978}
+      rotation: {x: -0.50000006, y: 0.4999999, z: 0.5, w: 0.5}
+      scale: {x: 15.023785, y: 15.023785, z: 15.023785}
+    - name: Luger_P08
+      parentName: Wehrmacht_soilder_B(Clone)
+      position: {x: 0.9913042, y: 1.1697433, z: 0.8819026}
+      rotation: {x: -0.7071069, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 3.2560277, y: 3.2560277, z: 3.2560277}
+    - name: K98
+      parentName: Wehrmacht_soilder_B(Clone)
+      position: {x: 1.0028524, y: 1.3648077, z: 0.8216077}
+      rotation: {x: -0.000000053385087, y: 0.7071068, z: 0.70710677, w: 0.00000005338507}
+      scale: {x: 12.614252, y: 12.614252, z: 12.614252}
+    - name: MP40
+      parentName: Wehrmacht_soilder_B(Clone)
+      position: {x: 1.0034415, y: 1.5423445, z: 0.8706731}
+      rotation: {x: -0.50000006, y: -0.4999999, z: -0.5, w: 0.5}
+      scale: {x: 6.606151, y: 6.606151, z: 6.606151}
+    - name: Wehrmacht_soilder_b
+      parentName: Wehrmacht_soilder_B(Clone)
+      position: {x: -0, y: 0.00000005387928, z: 0.00000013028514}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 99.999985, y: 99.999985, z: 99.99999}
+    - name: Jacket
+      parentName: Wehrmacht_soilder_B(Clone)
+      position: {x: 0.00058165553, y: 1.3205677, z: 0.074053764}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 99.999985, y: 99.999985, z: 99.99999}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

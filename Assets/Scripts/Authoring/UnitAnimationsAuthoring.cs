@@ -14,7 +14,7 @@ class UnitAnimationsAuthoring : MonoBehaviour
             AddComponent(entity, new UnitAnimations()
             {
                 idleAnimationType = authoring.idleAnimationType,
-                walkAnimationType = AnimationDataSO.AnimationType.SoldierWalk,
+                walkAnimationType = authoring.walkAnimationType,
             });
         }
     }
@@ -24,4 +24,5 @@ public struct UnitAnimations : IComponentData
 {
     public AnimationDataSO.AnimationType idleAnimationType;
     public AnimationDataSO.AnimationType walkAnimationType;
+    public AnimationDataSO.AnimationType shootAnimationType;
 }

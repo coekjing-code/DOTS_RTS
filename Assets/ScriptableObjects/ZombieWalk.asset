@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89527bf8fdc2a8d4c95fb262b55fc71f, type: 3}
+  m_Name: ZombieWalk
+  m_EditorClassIdentifier: 
+  animationType: 4
+  meshArray:
+  - {fileID: 4300000, guid: c992a4c0e500f0d4ca9ad0129348b876, type: 2}
+  - {fileID: 4300000, guid: fa3552706901c5948b0e70995fd880a5, type: 2}
+  - {fileID: 4300000, guid: bff957d5bb77f264b81b2af403e1dde2, type: 2}
+  - {fileID: 4300000, guid: c8a4ec8cdc4db5f41bed1d68c28223cc, type: 2}
+  - {fileID: 4300000, guid: 13c5237c814a8274b907f789ffaae6b3, type: 2}
+  - {fileID: 4300000, guid: 424ddf576effd5c42a7f93b93805f565, type: 2}
+  - {fileID: 4300000, guid: 9af11abf3994b714cbc03ca561ff8e90, type: 2}
+  - {fileID: 4300000, guid: d2840b98d2d37db42b6ef6981f8759bd, type: 2}
+  frameTimerMax: 0.2

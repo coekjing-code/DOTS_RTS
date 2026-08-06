@@ -12,8 +12,8 @@ class ActiveAnimationAuthoring : MonoBehaviour
         {
             Entity entity = GetEntity(TransformUsageFlags.Dynamic); 
 
-            EntitiesGraphicsSystem entitiesGraphicsSystem = 
-            World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<EntitiesGraphicsSystem>();
+            // EntitiesGraphicsSystem entitiesGraphicsSystem = 
+            // World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<EntitiesGraphicsSystem>();
             AddComponent(entity, new ActiveAnimation()
             {
                 nextAnimationType = authoring.nextAnimationType,

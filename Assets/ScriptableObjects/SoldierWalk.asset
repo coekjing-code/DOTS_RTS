@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89527bf8fdc2a8d4c95fb262b55fc71f, type: 3}
+  m_Name: SoldierWalk
+  m_EditorClassIdentifier: 
+  animationType: 2
+  meshArray:
+  - {fileID: 4300000, guid: bfad6c102a6f4964fb3bc9568ffaf5d2, type: 2}
+  - {fileID: 4300000, guid: e952a2c8081c2684987e2239e40bdd8c, type: 2}
+  - {fileID: 4300000, guid: 503cfd606b432d346842702077f81764, type: 2}
+  - {fileID: 4300000, guid: 4d59be0d848733b45a8c33f32a9d4479, type: 2}
+  - {fileID: 4300000, guid: 2a76b4f381915164795cf6635cd332e8, type: 2}
+  frameTimerMax: 0.25

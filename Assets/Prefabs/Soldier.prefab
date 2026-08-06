@@ -125,10 +125,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8010461807916964372, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
+      propertyPath: idleAnimationType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8010461807916964372, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
+      propertyPath: walkAnimationType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1164612401590862688, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 4300000, guid: f4209d51d1ad0434299f2d498ee076ba, type: 3}
+      objectReference: {fileID: 4300000, guid: 064c06d5aae0bfe4e96e629d84f25fea, type: 2}
     - target: {fileID: 1228227546833300971, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: faction
       value: 0
@@ -147,7 +155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5053927373286136524, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.6
+      value: -2.23
       objectReference: {fileID: 0}
     - target: {fileID: 5053927373286136524, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -184,7 +192,7 @@ PrefabInstance:
     - target: {fileID: 5054261994035909450, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 1dcd4ea457239f049875b7a7c8f9509e, type: 2}
+      objectReference: {fileID: 2100000, guid: 3eb6a8593e35d5d45a7a91f532a13b0c, type: 2}
     - target: {fileID: 5054261994035909450, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
@@ -245,7 +253,9 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2180682226630739431, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
+    - {fileID: 1414780140519041443, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5053927373286136524, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
