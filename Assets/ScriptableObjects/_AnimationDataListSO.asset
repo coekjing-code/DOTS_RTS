@@ -14,7 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationDataSOList:
   - {fileID: 11400000, guid: b4e9c85705a41e245ae4a375b9805fee, type: 2}
-  - {fileID: 11400000, guid: b76add286cafd1241b38e634e61caf9a, type: 2}
   - {fileID: 11400000, guid: 51079f65d00da5c48a86d56a2324bffc, type: 2}
+  - {fileID: 11400000, guid: b76add286cafd1241b38e634e61caf9a, type: 2}
   - {fileID: 11400000, guid: a8c9fbdfc160f694591ccd6c2d2c165d, type: 2}
   - {fileID: 11400000, guid: 9df03e12fc889cf43a4ffbaeddbcce19, type: 2}
+  - {fileID: 11400000, guid: 064809da3c3a90341acc6d9bed7c9288, type: 2}
+  - {fileID: 11400000, guid: 1f178acfeae899640b598783fe46f99f, type: 2}
+  - {fileID: 11400000, guid: ce33e0d0599aa904f97fc18b90686263, type: 2}
+  - {fileID: 11400000, guid: 4ada7377d6b32d44ca9fd5e9fd34aa5b, type: 2}
+  - {fileID: 11400000, guid: dc31a0e35f390ac429f7ae2f085b7d08, type: 2}
+  - {fileID: 11400000, guid: e2f9fc91ee5375240be87e629ce2de26, type: 2}
+  - {fileID: 11400000, guid: 3b92d01884830c042928c6a8910ef795, type: 2}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89527bf8fdc2a8d4c95fb262b55fc71f, type: 3}
+  m_Name: ScoutIdle
+  m_EditorClassIdentifier: 
+  animationType: 8
+  meshArray:
+  - {fileID: 4300000, guid: 214558803d3c0844d92c0c1b755412d7, type: 2}
+  - {fileID: 4300000, guid: 2ce96e4e061eee14693835b8eb7d6840, type: 2}
+  - {fileID: 4300000, guid: 4341c7e47212c6c4995091c1066c3608, type: 2}
+  - {fileID: 4300000, guid: acfa6aeb4f996d94194a1c0a6e3f4565, type: 2}
+  frameTimerMax: 0.5

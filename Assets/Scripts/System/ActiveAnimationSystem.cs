@@ -15,36 +15,67 @@ partial struct ActiveAnimationSystem : ISystem
     {
         AnimationDataHolder animationDataHolder = SystemAPI.GetSingleton<AnimationDataHolder>();
 
-        foreach ((RefRW<ActiveAnimation> activeAnimation, RefRW<MaterialMeshInfo> materialMeshInfo) in
-            SystemAPI.Query<RefRW<ActiveAnimation>, RefRW<MaterialMeshInfo>>())
+        ActiveAnimationJob activeAnimationJob = new ActiveAnimationJob()
         {
-            // if (Input.GetKeyDown(KeyCode.I))
-            // {
-            //     activeAnimation.ValueRW.nextAnimationType = AnimationDataSO.AnimationType.SoldierIdle;
-            // }
+            deltaTime = SystemAPI.Time.DeltaTime,
+            animationDataBlobArrayBlobAssetReference = animationDataHolder.animationDataBlobArrayBlobAssetReference,
+        };
 
-            // if (Input.GetKeyDown(KeyCode.W))
-            // {
-            //     activeAnimation.ValueRW.nextAnimationType = AnimationDataSO.AnimationType.SoldierWalk;
-            // }
+        activeAnimationJob.ScheduleParallel();
 
-            ref AnimationData animationData = 
-                ref animationDataHolder.animationDataBlobArrayBlobAssetReference.Value
-                    [(int)activeAnimation.ValueRO.activeAnimationType];
+        // foreach ((RefRW<ActiveAnimation> activeAnimation, RefRW<MaterialMeshInfo> materialMeshInfo) in
+        //     SystemAPI.Query<RefRW<ActiveAnimation>, RefRW<MaterialMeshInfo>>())
+        // {
+        //     ref AnimationData animationData = 
+        //         ref animationDataHolder.animationDataBlobArrayBlobAssetReference.Value
+        //             [(int)activeAnimation.ValueRO.activeAnimationType];
 
-            activeAnimation.ValueRW.frameTimer += SystemAPI.Time.DeltaTime;
-            if (activeAnimation.ValueRO.frameTimer >= animationData.frameTimerMax)
+        //     activeAnimation.ValueRW.frameTimer += SystemAPI.Time.DeltaTime;
+        //     if (activeAnimation.ValueRO.frameTimer >= animationData.frameTimerMax)
+        //     {
+        //         activeAnimation.ValueRW.frameTimer -= animationData.frameTimerMax;
+        //         activeAnimation.ValueRW.frame = 
+        //             (activeAnimation.ValueRO.frame + 1) % animationData.frameMax;
+
+        //         materialMeshInfo.ValueRW.MeshID = animationData.batchMeshIdBlobArray[activeAnimation.ValueRO.frame];
+
+        //         // 如果播放完射击动画，就跳转到None，再从None跳转到其他
+        //         if (activeAnimation.ValueRO.frame == 0 && activeAnimation.ValueRO.activeAnimationType == AnimationDataSO.AnimationType.SoldierShoot)
+        //         {
+        //             activeAnimation.ValueRW.nextAnimationType = AnimationDataSO.AnimationType.None;
+        //         }
+
+        //         // 如果播放完近战动画，就跳转到None，再从None跳转到其他
+        //         if (activeAnimation.ValueRO.frame == 0 && activeAnimation.ValueRO.activeAnimationType == AnimationDataSO.AnimationType.ZombieAttack)
+        //         {
+        //             activeAnimation.ValueRW.nextAnimationType = AnimationDataSO.AnimationType.None;
+        //         }
+        //     }
+        // }
+    }
+}
+
+public partial struct ActiveAnimationJob : IJobEntity
+{
+    public float deltaTime;
+    public BlobAssetReference<BlobArray<AnimationData>> animationDataBlobArrayBlobAssetReference;
+    public void Execute(ref ActiveAnimation activeAnimation, ref MaterialMeshInfo materialMeshInfo)
+    {
+        ref AnimationData animationData = 
+            ref animationDataBlobArrayBlobAssetReference.Value[(int)activeAnimation.activeAnimationType];
+
+        activeAnimation.frameTimer += deltaTime;
+        if (activeAnimation.frameTimer >= animationData.frameTimerMax)
+        {
+            activeAnimation.frameTimer -= animationData.frameTimerMax;
+            activeAnimation.frame = 
+                (activeAnimation.frame + 1) % animationData.frameMax;
+            materialMeshInfo.Mesh = animationData.intMeshIdBlobArray[activeAnimation.frame];
+
+            // 当播放完不可打断的动画后，跳转到None
+            if (activeAnimation.frame == 0 && AnimationDataSO.IsAnimationUninterruptible(activeAnimation.activeAnimationType))
             {
-                activeAnimation.ValueRW.frameTimer -= animationData.frameTimerMax;
-                activeAnimation.ValueRW.frame = 
-                    (activeAnimation.ValueRO.frame + 1) % animationData.frameMax;
-
-                materialMeshInfo.ValueRW.MeshID = animationData.batchMeshIdBlobArray[activeAnimation.ValueRO.frame];
-
-                if (activeAnimation.ValueRO.frame == 0 && activeAnimation.ValueRO.activeAnimationType == AnimationDataSO.AnimationType.SoldierShoot)
-                {
-                    activeAnimation.ValueRW.nextAnimationType = AnimationDataSO.AnimationType.None;
-                }
+                activeAnimation.nextAnimationType = AnimationDataSO.AnimationType.None;
             }
         }
     }

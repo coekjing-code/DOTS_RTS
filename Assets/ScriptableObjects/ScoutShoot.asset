@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89527bf8fdc2a8d4c95fb262b55fc71f, type: 3}
+  m_Name: ScoutShoot
+  m_EditorClassIdentifier: 
+  animationType: 10
+  meshArray:
+  - {fileID: 4300000, guid: 0395d0c396414074b8902b049c000e65, type: 2}
+  - {fileID: 4300000, guid: 5955130370ddbea46a05c42f1a046ddd, type: 2}
+  - {fileID: 4300000, guid: 9b4c5efd0f54a9846921cbee5eb7b873, type: 2}
+  - {fileID: 4300000, guid: 04384c9fab28d7745b956cd57ee2b4b1, type: 2}
+  - {fileID: 4300000, guid: cabb4cadecb17fc4db6f0759384be531, type: 2}
+  frameTimerMax: 0.1
