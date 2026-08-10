@@ -47,6 +47,14 @@ PrefabInstance:
       propertyPath: walkAnimationType
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: -8010461807916964372, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
+      propertyPath: meleeAnimationType
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1164612401590862688, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 165b59866c9816245a840f00f2f3e067, type: 2}
     - target: {fileID: 1228227546833300971, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: faction
       value: 1
@@ -54,6 +62,10 @@ PrefabInstance:
     - target: {fileID: 2180682226630739431, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: nextAnimationType
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515567776227660303, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
+      propertyPath: factionType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5053927373286136524, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -97,7 +109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5093832809708636421, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: loseTargetDistance
-      value: 8
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7039319915722205336, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: range

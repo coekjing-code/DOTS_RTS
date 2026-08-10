@@ -3,21 +3,17 @@ using UnityEngine;
 
 class UnitAuthoring : MonoBehaviour
 {
-    public Faction faction;
+    public FactionType faction;
     class UnitAuthoringBaker : Baker<UnitAuthoring>
     {
         public override void Bake(UnitAuthoring authoring)
         {
             Entity entity = GetEntity(TransformUsageFlags.Dynamic);
-            AddComponent(entity, new Unit()
-            {
-                faction = authoring.faction,
-            });
+            AddComponent(entity, new Unit(){});
         }
     }
 }
 
 public struct Unit : IComponentData
 {
-    public Faction faction;
 }

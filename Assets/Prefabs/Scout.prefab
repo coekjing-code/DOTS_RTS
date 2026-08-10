@@ -161,6 +161,10 @@ PrefabInstance:
       propertyPath: healthAmountMax
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 4515567776227660303, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
+      propertyPath: factionType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5053927373286136524, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.14

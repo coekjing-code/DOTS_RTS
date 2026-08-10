@@ -125,7 +125,7 @@ public class UnitSelectionManager : MonoBehaviour
                 Filter = new CollisionFilter
                 {
                     BelongsTo = ~0u,
-                    CollidesWith = 1u << GameAssets.UNIT_LAYER,
+                    CollidesWith = 1u << GameAssets.UNIT_LAYER | 1u << GameAssets.BUILDINGS_LAYER,
                     GroupIndex = 0,
                 }
             };
@@ -137,8 +137,8 @@ public class UnitSelectionManager : MonoBehaviour
                 if (entityManager.HasComponent<Unit>(raycastHit.Entity))
                 {
                     // 右键点中僵尸时，将其设为overrideTarget
-                    Unit unit = entityManager.GetComponentData<Unit>(raycastHit.Entity);
-                    if (unit.faction == Faction.Zombie)
+                    Faction faction = entityManager.GetComponentData<Faction>(raycastHit.Entity);
+                    if (faction.factionType == FactionType.Zombie)
                     {
                         isAttackingSingleTarget = true;
 

@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - schutzstaffel_b
+  - schutzstaffel_a
+  - wehrmacht_c
+  - wehrmacht_b
+  - wehrmacht_a
   layers:
   - Default
   - TransparentFX
@@ -12,7 +17,7 @@ TagManager:
   - Water
   - UI
   - Units
-  - 
+  - Buildings
   - 
   - 
   - 

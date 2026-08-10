@@ -1,4 +1,4 @@
-public enum Faction
+public enum FactionType
 {
     Soldier,
     Zombie,

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5155895932489394920}
   - component: {fileID: 120072706167619689}
   - component: {fileID: -6149137306071980411}
+  - component: {fileID: 7005550585647076728}
   m_Layer: 0
   m_Name: ShootLight
   m_TagString: Untagged
@@ -135,3 +136,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 0.05
+--- !u!114 &7005550585647076728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8200374348235460526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c16549610bfe4458aa9389201d072bb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

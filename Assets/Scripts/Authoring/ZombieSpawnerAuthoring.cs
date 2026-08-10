@@ -6,6 +6,8 @@ class ZombieSpawnerAuthoring : MonoBehaviour
     public float timerMax;
     public float randomWalkingDistanceMin;
     public float randomWalkingDistanceMax;
+    public int nearbyZombieAmountMax;
+    public float nearbyZombieAmountDistance;
     class ZombieSpawnerAuthoringBaker : Baker<ZombieSpawnerAuthoring>
     {
         public override void Bake(ZombieSpawnerAuthoring authoring)
@@ -16,6 +18,8 @@ class ZombieSpawnerAuthoring : MonoBehaviour
                 timerMax = authoring.timerMax,
                 randomWalkingDistanceMax = authoring.randomWalkingDistanceMax,
                 randomWalkingDistanceMin = authoring.randomWalkingDistanceMin,
+                nearbyZombieAmountMax = authoring.nearbyZombieAmountMax,
+                nearbyZombieAmountDistance = authoring.nearbyZombieAmountDistance,
             });
         }
     }
@@ -27,5 +31,7 @@ public struct ZombieSpawner : IComponentData
     public float timerMax;
     public float randomWalkingDistanceMin;
     public float randomWalkingDistanceMax;
+    public int nearbyZombieAmountMax;
+    public float nearbyZombieAmountDistance;
 }
 

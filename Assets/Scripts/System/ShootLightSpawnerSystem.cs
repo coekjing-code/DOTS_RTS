@@ -17,10 +17,13 @@ partial struct ShootLightSpawnerSystem : ISystem
     {
         EntitiesReferences entitiesReferences = SystemAPI.GetSingleton<EntitiesReferences>();
 
-        foreach (RefRO<ShootAttack> shootLight in SystemAPI.Query<RefRO<ShootAttack>>())
+        foreach (RefRO<ShootAttack> shootAttack in SystemAPI.Query<RefRO<ShootAttack>>())
         {
-            Entity shootLightEntity = state.EntityManager.Instantiate(entitiesReferences.shootLightPrefabEntity);
-            SystemAPI.SetComponent(shootLightEntity, LocalTransform.FromPosition(shootLight.ValueRO.onShoot.shootFromPosition));
+            if (shootAttack.ValueRO.onShoot.isTriggered)
+            {
+                Entity shootLightEntity = state.EntityManager.Instantiate(entitiesReferences.shootLightPrefabEntity);
+                SystemAPI.SetComponent(shootLightEntity, LocalTransform.FromPosition(shootAttack.ValueRO.onShoot.shootFromPosition));
+            }
         }
     }
 }

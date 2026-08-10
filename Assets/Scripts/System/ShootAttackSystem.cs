@@ -58,11 +58,14 @@ partial struct ShootAttackSystem : ISystem
 
             shootAttack.ValueRW.timer = shootAttack.ValueRO.timerMax;
 
-            // Unit射击敌人时，若敌人targetOverride为Null,则将Unit设为其targetOverride
-            RefRW<TargetOverride> enemyTargetOverride = SystemAPI.GetComponentRW<TargetOverride>(target.ValueRO.targetEntity);
-            if (enemyTargetOverride.ValueRO.targetEntity == Entity.Null)
+            // Unit射击敌人或者建筑时，若敌人targetOverride为Null,则将Unit设为其targetOverride
+            if (SystemAPI.HasComponent<TargetOverride>(target.ValueRO.targetEntity))
             {
-                enemyTargetOverride.ValueRW.targetEntity = entity;
+                RefRW<TargetOverride> enemyTargetOverride = SystemAPI.GetComponentRW<TargetOverride>(target.ValueRO.targetEntity);
+                if (enemyTargetOverride.ValueRO.targetEntity == Entity.Null)
+                {
+                    enemyTargetOverride.ValueRW.targetEntity = entity;
+                }
             }
 
             Entity bulletEntity = state.EntityManager.Instantiate(entitiesReferences.bulletPrefabEntity);

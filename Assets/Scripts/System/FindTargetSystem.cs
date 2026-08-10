@@ -46,7 +46,7 @@ partial struct FindTargetSystem : ISystem
             CollisionFilter collisionFilter = new CollisionFilter()
             {
                 BelongsTo = ~0u,
-                CollidesWith = 1u << GameAssets.UNIT_LAYER,
+                CollidesWith = 1u << GameAssets.UNIT_LAYER | 1u << GameAssets.BUILDINGS_LAYER,
                 GroupIndex = 0,
             };
 
@@ -66,12 +66,12 @@ partial struct FindTargetSystem : ISystem
             {
                 foreach (DistanceHit distanceHit in distanceHitList)
                 {
-                    if (!SystemAPI.Exists(distanceHit.Entity) || !SystemAPI.HasComponent<Unit>(distanceHit.Entity))
+                    if (!SystemAPI.Exists(distanceHit.Entity) || !SystemAPI.HasComponent<Faction>(distanceHit.Entity))
                     {
                         continue;
                     }
-                    Unit targetUnit = SystemAPI.GetComponent<Unit>(distanceHit.Entity);
-                    if (targetUnit.faction == findTarget.ValueRO.faction)
+                    Faction targetFaction = SystemAPI.GetComponent<Faction>(distanceHit.Entity);
+                    if (targetFaction.factionType == findTarget.ValueRO.faction)
                     {
                         if (closestTargetEntity == Entity.Null)
                         {
