@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "AnimationDataListSO")]
+[CreateAssetMenu()]
 public class AnimationDataListSO : ScriptableObject
 {
     public List<AnimationDataSO> animationDataSOList;
@@ -16,8 +16,8 @@ public class AnimationDataListSO : ScriptableObject
             }
         }
 
-        Debug.Log("Can not find the target animation type : " + animationType);
+        Debug.Log("Can not find AnimationTypeSO for AnimationType : " + animationType);
 
-        return null;        
+        return null;
     }
 }

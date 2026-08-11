@@ -52,9 +52,39 @@ partial struct ShootAttackSystem : ISystem
             localTransform.ValueRW.Rotation =
             math.slerp(localTransform.ValueRO.Rotation, rotation, SystemAPI.Time.DeltaTime * unitMover.ValueRO.rotateSpeed);
 
+        }
+
+
+        foreach ((
+            RefRW<LocalTransform> localTransform,
+            RefRW<ShootAttack> shootAttack,
+            RefRO<Target> target,
+            Entity entity)
+            in SystemAPI.Query<
+                RefRW<LocalTransform>,
+                RefRW<ShootAttack>,
+                RefRO<Target>>().WithEntityAccess())
+        {
+            if (target.ValueRO.targetEntity == Entity.Null) continue;
+
+            LocalTransform targetLocalTransform = SystemAPI.GetComponent<LocalTransform>(target.ValueRO.targetEntity);
+
+            if (math.distance(localTransform.ValueRO.Position, targetLocalTransform.Position) > shootAttack.ValueRO.attackDistance)
+            {
+                continue;
+            }
+
+            if (SystemAPI.HasComponent<MoveOverride>(entity) && SystemAPI.IsComponentEnabled<MoveOverride>(entity))
+            {
+                continue;
+            }
+
             shootAttack.ValueRW.timer -= SystemAPI.Time.DeltaTime;
 
-            if (shootAttack.ValueRW.timer > 0f) continue;
+            if (shootAttack.ValueRW.timer > 0f)
+            {
+                continue;
+            }
 
             shootAttack.ValueRW.timer = shootAttack.ValueRO.timerMax;
 

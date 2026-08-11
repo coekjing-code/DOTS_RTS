@@ -14,7 +14,6 @@ partial struct ResetEventsSystem : ISystem
         jobHandleNativeArray = new NativeArray<JobHandle>(4, Allocator.Persistent);
     }
 
-    [BurstCompile]
     public void OnUpdate(ref SystemState state)
     {
         jobHandleNativeArray[0] = new ResetSelectedEventsJob().ScheduleParallel(state.Dependency);
@@ -22,23 +21,15 @@ partial struct ResetEventsSystem : ISystem
         jobHandleNativeArray[2] = new ResetHealthEventsJob().ScheduleParallel(state.Dependency);
         jobHandleNativeArray[3] = new ResetMeleeAttackEventsJob().ScheduleParallel(state.Dependency);
 
+        NativeList<Entity> onBarracksUnitQueueChangedEntityList = new NativeList<Entity>(Allocator.TempJob);
+        new ResetBuildingBarracksEventsJob()
+        {
+            onUnitQueueChangedEntityList = onBarracksUnitQueueChangedEntityList.AsParallelWriter(),
+        }.ScheduleParallel(state.Dependency).Complete();
+
+        DOTSEventsManager.Instance.TriggerOnBarracksUnitQueueChanged(onBarracksUnitQueueChangedEntityList);
+
         state.Dependency = JobHandle.CombineDependencies(jobHandleNativeArray);
-
-        // foreach (RefRW<Selected> selected in SystemAPI.Query<RefRW<Selected>>().WithPresent<Selected>())
-        // {
-        //     selected.ValueRW.onSelected = false;
-        //     selected.ValueRW.onDeselected = false;
-        // }
-
-        // foreach (RefRW<Health> health in SystemAPI.Query<RefRW<Health>>())
-        // {
-        //     health.ValueRW.onHealthChanged = false;
-        // }
-
-        // foreach (RefRW<ShootAttack> shootAttack in SystemAPI.Query<RefRW<ShootAttack>>())
-        // {
-        //     shootAttack.ValueRW.onShoot.isTriggered = false;
-        // }
     }
 }
 
@@ -76,5 +67,18 @@ public partial struct ResetMeleeAttackEventsJob : IJobEntity
     public void Execute(ref MeleeAttack meleeAttack)
     {
         meleeAttack.onAttacked = false;
+    }
+}
+[BurstCompile]
+public partial struct ResetBuildingBarracksEventsJob : IJobEntity
+{
+    public NativeList<Entity>.ParallelWriter onUnitQueueChangedEntityList;
+    public void Execute(ref BuildingBarracks buildingBarracks, Entity entity)
+    {
+        if (buildingBarracks.onUnitQueueChanged)
+        {
+            onUnitQueueChangedEntityList.AddNoResize(entity);
+        }
+        buildingBarracks.onUnitQueueChanged = false;
     }
 }

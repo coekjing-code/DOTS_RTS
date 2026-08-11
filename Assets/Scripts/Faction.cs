@@ -1,5 +1,5 @@
 public enum FactionType
 {
-    Soldier,
-    Zombie,
+    Friendly,
+    Enemy,
 }

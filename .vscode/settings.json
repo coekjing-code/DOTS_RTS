@@ -66,7 +66,7 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj"
     },
-    "dotnet.defaultSolution": "DOTS_RTS.sln",
+    "dotnet.defaultSolution": "dots_-rts.sln",
     "editor.quickSuggestions": {
         "other": true,
         "comments": false,

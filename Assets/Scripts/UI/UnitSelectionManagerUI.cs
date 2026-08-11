@@ -8,8 +8,8 @@ public class UnitSelectionManagerUI : MonoBehaviour
 
     void Start()
     {
-        UnitSelectionManager.Instance.onSelectionAreaStart += UnitSelectionManager_onSelectionAreaStart;
-        UnitSelectionManager.Instance.onSelectionAreaEnd += UnitSelectionManager_onSelectionAreaEnd;
+        UnitSelectionManager.Instance.OnSelectionAreaStart += UnitSelectionManager_onSelectionAreaStart;
+        UnitSelectionManager.Instance.OnSelectionAreaEnd += UnitSelectionManager_onSelectionAreaEnd;
     
         selectionAreaRectTransform.gameObject.SetActive(false);
     }

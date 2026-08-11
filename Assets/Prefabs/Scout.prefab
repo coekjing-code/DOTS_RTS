@@ -219,7 +219,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: f1ffde0cab3b53e4b8db6c78d825b21a, type: 2}
     - target: {fileID: 5093832809708636421, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: loseTargetDistance
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6952025157487261511, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: moveSpeed
@@ -227,7 +227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7039319915722205336, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: range
-      value: 15
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 7039319915722205336, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: faction
@@ -236,6 +236,10 @@ PrefabInstance:
     - target: {fileID: 7073436717731348781, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: m_Name
       value: Scout
+      objectReference: {fileID: 0}
+    - target: {fileID: 7689442269376174285, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
+      propertyPath: unitType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8143849701681905982, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
       propertyPath: m_LocalScale.x
@@ -347,9 +351,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab85cfc3e4dbd24185c218a7d7817ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerMax: 0.2
-  damageAmount: 5
-  attackDistance: 13
+  timerMax: 0.5
+  damageAmount: 3
+  attackDistance: 11
   bulletSpawnPositionTransform: {fileID: 2880607234138915955}
 --- !u!114 &551415473012944971
 MonoBehaviour:

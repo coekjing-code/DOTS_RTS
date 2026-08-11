@@ -5,12 +5,14 @@ using Unity.Mathematics;
 using Unity.Physics;
 using Unity.Transforms;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UnitSelectionManager : MonoBehaviour
 {
     private Vector2 selectionStartMousePosition;
-    public EventHandler onSelectionAreaStart;
-    public EventHandler onSelectionAreaEnd;
+    public event EventHandler OnSelectionAreaStart;
+    public event EventHandler OnSelectionAreaEnd;
+    public event EventHandler OnSelectedEntitiesChanged;
     
     public static UnitSelectionManager Instance { get; private set; }
     void Awake()
@@ -20,12 +22,17 @@ public class UnitSelectionManager : MonoBehaviour
 
     void Update()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             selectionStartMousePosition = Input.mousePosition;
-            onSelectionAreaStart?.Invoke(this, EventArgs.Empty);
+            OnSelectionAreaStart?.Invoke(this, EventArgs.Empty);
         }
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButton(0))
         {
 
             Vector2 selectionEndMousePosition = Input.mousePosition;
@@ -85,14 +92,14 @@ public class UnitSelectionManager : MonoBehaviour
                     Filter = new CollisionFilter
                     {
                         BelongsTo = ~0u,
-                        CollidesWith = 1u << GameAssets.UNIT_LAYER,
+                        CollidesWith = 1u << GameAssets.UNIT_LAYER | 1u << GameAssets.BUILDINGS_LAYER,
                         GroupIndex = 0,
                     }    
                 };
 
                 if (collisionWorld.CastRay(raycastInput, out Unity.Physics.RaycastHit raycastHit))
                 {
-                    if (entityManager.HasComponent<Unit>(raycastHit.Entity) && entityManager.HasComponent<Selected>(raycastHit.Entity))
+                    if (entityManager.HasComponent<Selected>(raycastHit.Entity))
                     {
                         // 击中单位
                         entityManager.SetComponentEnabled<Selected>(raycastHit.Entity, true);
@@ -104,12 +111,13 @@ public class UnitSelectionManager : MonoBehaviour
             }
 
 
-            onSelectionAreaEnd?.Invoke(this, EventArgs.Empty);
+            OnSelectionAreaEnd?.Invoke(this, EventArgs.Empty);
+            OnSelectedEntitiesChanged?.Invoke(this, EventArgs.Empty);
         }
 
         if (Input.GetMouseButton(1))
         {
-            Vector3 mousePosition = MouseWorldPosition.Instance.GetPosition();
+            Vector3 mouseWorldPosition = MouseWorldPosition.Instance.GetPosition();
 
             EntityManager entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
 
@@ -138,7 +146,7 @@ public class UnitSelectionManager : MonoBehaviour
                 {
                     // 右键点中僵尸时，将其设为overrideTarget
                     Faction faction = entityManager.GetComponentData<Faction>(raycastHit.Entity);
-                    if (faction.factionType == FactionType.Zombie)
+                    if (faction.factionType == FactionType.Enemy)
                     {
                         isAttackingSingleTarget = true;
 
@@ -161,6 +169,7 @@ public class UnitSelectionManager : MonoBehaviour
                 }
             }
 
+            // 如果不是点击到敌人，则判断是否是MoveOverride
             if (!isAttackingSingleTarget)
             {
                 // 查询所有带有MoveOverride和TargetOverride组件的Unit
@@ -170,7 +179,7 @@ public class UnitSelectionManager : MonoBehaviour
                 NativeArray<Entity> entityArray = entityQuery.ToEntityArray(Allocator.Temp);
                 NativeArray<MoveOverride> moverOverrideArray = entityQuery.ToComponentDataArray<MoveOverride>(Allocator.Temp);
                 NativeArray<TargetOverride> targetOverrideArray = entityQuery.ToComponentDataArray<TargetOverride>(Allocator.Temp);
-                NativeArray<float3> movePositionArray = GenerateMovePositionArray(mousePosition, entityArray.Length);
+                NativeArray<float3> movePositionArray = GenerateMovePositionArray(mouseWorldPosition, entityArray.Length);
                 // 设置MoveOverride的TargetPosition,启用MoveOverride
                 // 更新查询到的Entity的组件
                 // 将TargetOverride的targetEntity设为Null
@@ -178,7 +187,7 @@ public class UnitSelectionManager : MonoBehaviour
                 {
                     MoveOverride moveOverride = moverOverrideArray[i];
                     moveOverride.targetPosition = movePositionArray[i];
-                    entityManager.SetComponentData(entityArray[i], moveOverride);   
+                    entityManager.SetComponentData(entityArray[i], moveOverride);
                     moverOverrideArray[i] = moveOverride;
                     entityManager.SetComponentEnabled<MoveOverride>(entityArray[i], true);
 
@@ -189,6 +198,21 @@ public class UnitSelectionManager : MonoBehaviour
                 entityQuery.CopyFromComponentDataArray(moverOverrideArray);
                 entityQuery.CopyFromComponentDataArray(targetOverrideArray);
             }
+            
+            // 查询所有带有MoveOverride和TargetOverride组件的Unit
+            entityQuery = new EntityQueryBuilder(Allocator.Temp).
+            WithAll<Selected, BuildingBarracks, LocalTransform>().Build(entityManager);
+
+            NativeArray<BuildingBarracks> buildingBarracksArray = entityQuery.ToComponentDataArray<BuildingBarracks>(Allocator.Temp);
+            NativeArray<LocalTransform> localTransformArray = entityQuery.ToComponentDataArray<LocalTransform>(Allocator.Temp);
+
+            for (int i = 0; i < buildingBarracksArray.Length; i++)
+            {
+                BuildingBarracks buildingBarracks = buildingBarracksArray[i];
+                buildingBarracks.rallyPositionOffset = (float3)mouseWorldPosition - localTransformArray[i].Position;
+                buildingBarracksArray[i] = buildingBarracks;
+            }
+            entityQuery.CopyFromComponentDataArray(buildingBarracksArray);
         }
     }
 

@@ -123,6 +123,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie
       objectReference: {fileID: 0}
+    - target: {fileID: 7689442269376174285, guid: 77d4b682bffb94041b08de826ecd135c, type: 3}
+      propertyPath: unitType
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
