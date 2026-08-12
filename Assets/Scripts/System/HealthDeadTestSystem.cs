@@ -7,10 +7,11 @@ partial struct HealthDeadTestSystem : ISystem
     public void OnUpdate(ref SystemState state)
     {
         EntityCommandBuffer entityCommandBuffer = SystemAPI.GetSingleton<EndSimulationEntityCommandBufferSystem.Singleton>().CreateCommandBuffer(state.WorldUnmanaged);
-        foreach ((RefRO<Health> health, Entity entity) in SystemAPI.Query<RefRO<Health>>().WithEntityAccess())
+        foreach ((RefRW<Health> health, Entity entity) in SystemAPI.Query<RefRW<Health>>().WithEntityAccess())
         {
             if (health.ValueRO.healthAmount <= 0)
             {
+                health.ValueRW.onDead = true;
                 entityCommandBuffer.DestroyEntity(entity);
             }
         }

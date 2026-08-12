@@ -48,11 +48,11 @@ partial struct AnimationDataHolderBakingSystem : ISystem
 
             // BlobBuilder 销毁之后，你拿到的 BlobAssetReference 依然有效，真正 Blob 内存是在CreateBlobAssetReference指定的Allocator.Persistent上。
             ref BlobArray<AnimationData> animationDataBlobArray = ref blobBuilder.ConstructRoot<BlobArray<AnimationData>>();
-            
+
             // Allocate 给根 BlobArray 分配元素数量
             // ref animationDataBlobArray：传入根的 BlobArray 引用，告诉 Builder 要给这个数组分配 N 个元素。
             // 返回值 BlobBuilderArray<AnimationData>：写入句柄，构建阶段唯一合法写入手段。
-            BlobBuilderArray<AnimationData> animationDataBlobBuilderArray = 
+            BlobBuilderArray<AnimationData> animationDataBlobBuilderArray =
                 blobBuilder.Allocate<AnimationData>(ref animationDataBlobArray, System.Enum.GetValues(typeof(AnimationDataSO.AnimationType)).Length);
 
             int index = 0;
@@ -79,6 +79,14 @@ partial struct AnimationDataHolderBakingSystem : ISystem
             animationDataHolder.ValueRW.animationDataBlobArrayBlobAssetReference =
                 blobBuilder.CreateBlobAssetReference<BlobArray<AnimationData>>(Allocator.Persistent);
             blobBuilder.Dispose();
+        }
+    }
+    
+    public void OnDestroy(ref SystemState state)
+    {
+        foreach (RefRW<AnimationDataHolder> animationDataHolder in SystemAPI.Query<RefRW<AnimationDataHolder>>())
+        {
+            animationDataHolder.ValueRO.animationDataBlobArrayBlobAssetReference.Dispose();
         }
     }
 }

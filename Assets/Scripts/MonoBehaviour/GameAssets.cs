@@ -11,4 +11,6 @@ public class GameAssets : MonoBehaviour
     }
 
     public UnitTypeListSO unitTypeListSO;
+
+    public BuidlingTypeListSO buidlingTypeListSO;
 }

@@ -7,21 +7,32 @@ using Unity.Jobs;
 partial struct ResetEventsSystem : ISystem
 {
     private NativeArray<JobHandle> jobHandleNativeArray;
+    private NativeList<Entity> onBarracksUnitQueueChangedEntityList;
 
     [BurstCompile]
     public void OnCreate(ref SystemState state)
     {
         jobHandleNativeArray = new NativeArray<JobHandle>(4, Allocator.Persistent);
+        onBarracksUnitQueueChangedEntityList = new NativeList<Entity>(Allocator.Persistent);
     }
 
     public void OnUpdate(ref SystemState state)
     {
+        if (SystemAPI.HasSingleton<BuildingHQ>())
+        {
+            Health hqHealth = SystemAPI.GetComponent<Health>(SystemAPI.GetSingletonEntity<BuildingHQ>());
+            if (hqHealth.onDead)
+            {
+                DOTSEventsManager.Instance.TriggerOnHQDead();
+            }
+        }
+
         jobHandleNativeArray[0] = new ResetSelectedEventsJob().ScheduleParallel(state.Dependency);
         jobHandleNativeArray[1] = new ResetShootAttackEventsJob().ScheduleParallel(state.Dependency);
         jobHandleNativeArray[2] = new ResetHealthEventsJob().ScheduleParallel(state.Dependency);
         jobHandleNativeArray[3] = new ResetMeleeAttackEventsJob().ScheduleParallel(state.Dependency);
 
-        NativeList<Entity> onBarracksUnitQueueChangedEntityList = new NativeList<Entity>(Allocator.TempJob);
+        onBarracksUnitQueueChangedEntityList.Clear();
         new ResetBuildingBarracksEventsJob()
         {
             onUnitQueueChangedEntityList = onBarracksUnitQueueChangedEntityList.AsParallelWriter(),
@@ -30,6 +41,12 @@ partial struct ResetEventsSystem : ISystem
         DOTSEventsManager.Instance.TriggerOnBarracksUnitQueueChanged(onBarracksUnitQueueChangedEntityList);
 
         state.Dependency = JobHandle.CombineDependencies(jobHandleNativeArray);
+    }
+
+    public void OnDestory(ref SystemState state)
+    {
+        jobHandleNativeArray.Dispose();
+        onBarracksUnitQueueChangedEntityList.Dispose();
     }
 }
 
@@ -49,6 +66,7 @@ public partial struct ResetHealthEventsJob : IJobEntity
     public void Execute(ref Health health)
     {
         health.onHealthChanged = false;
+        health.onDead = false;
     }
 }
 

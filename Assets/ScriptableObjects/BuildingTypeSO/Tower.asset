@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingType: 2
   prefab: {fileID: 7230164362269421911, guid: 167ce6fa27935044a92d7471564b919c, type: 3}
+  buildingDistanceMin: 3
+  showInBuildingPlacementManagerUI: 1
+  sprite: {fileID: 21300000, guid: c9eecbebc2f28f94488fbbf662912f1a, type: 3}
+  visualPrefab: {fileID: 8433577141289339128, guid: 2db839653959ec743a7b2116b8a0083e, type: 3}

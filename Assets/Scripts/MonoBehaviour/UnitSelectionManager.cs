@@ -27,14 +27,18 @@ public class UnitSelectionManager : MonoBehaviour
             return;
         }
 
+        if (!BuildingPlacementManager.Instance.GetActiveBuildingTypeSO().IsNone())
+        {
+            return;
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             selectionStartMousePosition = Input.mousePosition;
             OnSelectionAreaStart?.Invoke(this, EventArgs.Empty);
         }
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonUp(0))
         {
-
             Vector2 selectionEndMousePosition = Input.mousePosition;
             EntityManager entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
             
